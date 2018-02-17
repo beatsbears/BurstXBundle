@@ -28,6 +28,6 @@ Want to contribute?
 - @beatsbears (aka drownedcoast) - Andrew Scott
 -- Main developer
 
-<img align="right" width="298" height="120" title="Powered By Burst" src="https://raw.githubusercontent.com/PoC-Consortium/Marketing_Resources/master/Powered_By_Burst/PBB4.png" />
-#### Donate
+### Donate
 - Andrew Scott - BURST-Q944–2MY3–97ZZ-FBWGB
+<img align="right" width="298" height="120" title="Powered By Burst" src="https://raw.githubusercontent.com/PoC-Consortium/Marketing_Resources/master/Powered_By_Burst/PBB4.png" />
