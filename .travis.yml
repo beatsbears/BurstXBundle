@@ -1,0 +1,8 @@
+language: objective-c
+os: osx
+osx_image: xcode9
+before_install:
+- brew update && brew install swiftlint
+script:
+- swiftlint
+- xcodebuild -project BurstXBundle.xcodeproj -scheme BurstXBundle -sdk macosx10.13

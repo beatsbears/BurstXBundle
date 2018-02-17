@@ -1,0 +1,14 @@
+
+# Mac OS X
+.DS_Store
+
+# Xcode
+
+## Build generated
+build/
+DerivedData
+
+## Big files
+BurstXBundle/Resources/sig_mariadb-10.2.12-osx10.13-x86_64.pkg
+BurstXBundle/Resources/sig_JDK_8_Update_162.pkg
+
