@@ -699,6 +699,20 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NQk-Bc-aUX">
+                                <rect key="frame" x="269" y="71" width="150" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="Egz-TY-E5T"/>
+                                    <constraint firstAttribute="width" constant="150" id="H9Z-GL-wvp"/>
+                                </constraints>
+                                <buttonCell key="cell" type="inline" title="Reset" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="Tel-dc-Bfm">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="smallSystemBold"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="plotterResetButtonClick:" target="kA1-QQ-YkE" id="qkt-pc-uvI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="Xlf-Ht-pNH" firstAttribute="leading" secondItem="pQI-mH-r9V" secondAttribute="trailing" constant="2" id="6V3-Zd-nQD"/>
@@ -715,6 +729,7 @@
                             <constraint firstItem="vm1-jJ-B1o" firstAttribute="top" secondItem="Ab1-P9-FD5" secondAttribute="top" constant="20" id="I75-aH-UsD"/>
                             <constraint firstItem="3MP-NH-Gys" firstAttribute="leading" secondItem="vaz-MW-Pe0" secondAttribute="trailing" constant="5" id="IEV-Qt-Nhe"/>
                             <constraint firstItem="cEB-tg-Ki4" firstAttribute="top" secondItem="vm1-jJ-B1o" secondAttribute="bottom" constant="20" id="IW8-AH-va9"/>
+                            <constraint firstAttribute="trailing" secondItem="NQk-Bc-aUX" secondAttribute="trailing" constant="20" id="J6y-YE-zGL"/>
                             <constraint firstItem="0IJ-2c-Tdz" firstAttribute="top" secondItem="cEB-tg-Ki4" secondAttribute="bottom" constant="5" id="JNZ-cp-Ubn"/>
                             <constraint firstItem="DMY-wv-mYw" firstAttribute="top" secondItem="0IJ-2c-Tdz" secondAttribute="bottom" constant="5" id="Kxf-mO-zvk"/>
                             <constraint firstItem="Xye-0M-BF0" firstAttribute="top" secondItem="DMY-wv-mYw" secondAttribute="bottom" constant="5" id="Ly9-4i-xjA"/>
@@ -741,6 +756,7 @@
                             <constraint firstItem="lLr-zc-Amd" firstAttribute="top" secondItem="vm1-jJ-B1o" secondAttribute="bottom" constant="20" id="deR-xd-dIt"/>
                             <constraint firstItem="vaz-MW-Pe0" firstAttribute="leading" secondItem="Ab1-P9-FD5" secondAttribute="leading" constant="10" id="e04-jc-bwv"/>
                             <constraint firstItem="pQI-mH-r9V" firstAttribute="top" secondItem="Ab1-P9-FD5" secondAttribute="top" constant="20" id="eEl-j5-OFR"/>
+                            <constraint firstItem="NQk-Bc-aUX" firstAttribute="top" secondItem="XBa-gC-qBe" secondAttribute="bottom" constant="8" id="gJa-dw-stb"/>
                             <constraint firstItem="sF3-ub-iNn" firstAttribute="top" secondItem="lLr-zc-Amd" secondAttribute="bottom" constant="5" id="id8-ls-JMm"/>
                             <constraint firstItem="8QO-RS-o3f" firstAttribute="top" secondItem="93N-YC-pr0" secondAttribute="bottom" constant="3" id="k1J-Df-Gja"/>
                             <constraint firstItem="wj7-KY-gzk" firstAttribute="top" secondItem="uWx-vz-9B0" secondAttribute="bottom" constant="5" id="na1-0O-4Jn"/>
@@ -772,6 +788,7 @@
                         <outlet property="plotterPlotSizeTextField" destination="Xye-0M-BF0" id="bKQ-o3-Hcs"/>
                         <outlet property="plotterProgressBar" destination="DJC-nj-rRZ" id="jTi-eS-fhN"/>
                         <outlet property="plotterProgressPercentLabel" destination="ccZ-zx-Der" id="DYa-Bu-ghb"/>
+                        <outlet property="plotterResetButton" destination="NQk-Bc-aUX" id="Adm-rk-wTz"/>
                         <outlet property="plotterStartPlottingButton" destination="XBa-gC-qBe" id="VrP-8F-jcf"/>
                         <outlet property="plotterStartingNonceTextField" destination="0IJ-2c-Tdz" id="xt3-eb-DzW"/>
                         <outlet property="plotterStatusIndicatorLabel" destination="Hnf-D1-hin" id="AlR-CI-cxe"/>
@@ -783,7 +800,7 @@
                 </viewController>
                 <customObject id="bbo-ev-WtT" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1107.5" y="1306"/>
+            <point key="canvasLocation" x="1107.5" y="1305.5"/>
         </scene>
         <!--Miner-->
         <scene sceneID="eZC-gZ-nsF">

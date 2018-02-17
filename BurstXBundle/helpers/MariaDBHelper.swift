@@ -27,12 +27,12 @@ class MariaDBHelper {
 
     init() {
         let bundle = Bundle.main
-        self.pathIsInstalledScript = bundle.path(forResource: "isMariaDBInstalled", ofType: "sh")!
+        self.pathIsInstalledScript = bundle.path(forResource: "is_maria_db_installed", ofType: "sh")!
         self.pathInstaller = bundle.path(forResource: "sig_mariadb-10.2.12-osx10.13-x86_64", ofType: "pkg")!
         self.pathDBSetup = bundle.path(forResource: "db_setup", ofType: "sh")!
         self.pathCreateDBScript = bundle.path(forResource: "create_database", ofType: "sh")!
         self.pathDBCheck = bundle.path(forResource: "db_check", ofType: "sh")!
-        self.pathCheckDBScript = bundle.path(forResource: "isMariaDBPasswordDefault", ofType: "sh")!
+        self.pathCheckDBScript = bundle.path(forResource: "is_maria_db_password_default", ofType: "sh")!
     }
 
     func isMariaDBInstalled() -> Bool {

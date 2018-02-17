@@ -21,8 +21,8 @@
 		FD3A25ED20256A4A00DB3240 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3A25EC20256A4A00DB3240 /* WalletViewController.swift */; };
 		FD3A25F02025F80C00DB3240 /* SwiftBasher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3A25EF2025F80C00DB3240 /* SwiftBasher.swift */; };
 		FD4710092027A28400F991D4 /* db_burst_ready.sh in Resources */ = {isa = PBXBuildFile; fileRef = FD4710082027A28400F991D4 /* db_burst_ready.sh */; };
-		FD47100B2027A2B200F991D4 /* isMariaDBBurstReady.sh in Resources */ = {isa = PBXBuildFile; fileRef = FD47100A2027A2B200F991D4 /* isMariaDBBurstReady.sh */; };
-		FD47100D2027A67500F991D4 /* isJava8Installed.sh in Resources */ = {isa = PBXBuildFile; fileRef = FD47100C2027A67500F991D4 /* isJava8Installed.sh */; };
+		FD47100B2027A2B200F991D4 /* is_maria_db_burst_ready.sh in Resources */ = {isa = PBXBuildFile; fileRef = FD47100A2027A2B200F991D4 /* is_maria_db_burst_ready.sh */; };
+		FD47100D2027A67500F991D4 /* is_java8_installed.sh in Resources */ = {isa = PBXBuildFile; fileRef = FD47100C2027A67500F991D4 /* is_java8_installed.sh */; };
 		FD47AAD220292F060092BF39 /* wallet_install.sh in Resources */ = {isa = PBXBuildFile; fileRef = FD47AAD120292F060092BF39 /* wallet_install.sh */; };
 		FD47AAD420292F910092BF39 /* check_latest_wallet.sh in Resources */ = {isa = PBXBuildFile; fileRef = FD47AAD320292F900092BF39 /* check_latest_wallet.sh */; };
 		FD47AAD6202941BF0092BF39 /* is_wallet_installed.sh in Resources */ = {isa = PBXBuildFile; fileRef = FD47AAD5202941BF0092BF39 /* is_wallet_installed.sh */; };
@@ -40,13 +40,15 @@
 		FD976D1D2038A439004CCB70 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FD976D1C2038A438004CCB70 /* .gitignore */; };
 		FD976D1F2038A6B5004CCB70 /* sig_JDK_8_Update_162.pkg in Resources */ = {isa = PBXBuildFile; fileRef = FD976D1E2038A6B5004CCB70 /* sig_JDK_8_Update_162.pkg */; };
 		FDAA23582038A85F004E1877 /* sig_JDK_8_Update_162.pkg in Resources */ = {isa = PBXBuildFile; fileRef = FDAA23572038A85E004E1877 /* sig_JDK_8_Update_162.pkg */; };
-		FDAD0F6F2027767E0013301F /* isMariaDBInstalled.sh in Resources */ = {isa = PBXBuildFile; fileRef = FDAD0F6D202776520013301F /* isMariaDBInstalled.sh */; };
-		FDAD0F702027767E0013301F /* isMariaDBPasswordDefault.sh in Resources */ = {isa = PBXBuildFile; fileRef = FDAD0F6E202776520013301F /* isMariaDBPasswordDefault.sh */; };
+		FDAA235B2038D253004E1877 /* PlotterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDAA235A2038D252004E1877 /* PlotterRequest.swift */; };
+		FDAD0F6F2027767E0013301F /* is_maria_db_installed.sh in Resources */ = {isa = PBXBuildFile; fileRef = FDAD0F6D202776520013301F /* is_maria_db_installed.sh */; };
+		FDAD0F702027767E0013301F /* is_maria_db_password_default.sh in Resources */ = {isa = PBXBuildFile; fileRef = FDAD0F6E202776520013301F /* is_maria_db_password_default.sh */; };
 		FDAD0F712027767E0013301F /* create_database.sh in Resources */ = {isa = PBXBuildFile; fileRef = FDAD0F6A202776420013301F /* create_database.sh */; };
 		FDAD0F732027767E0013301F /* db_setup.sh in Resources */ = {isa = PBXBuildFile; fileRef = FDAD0F6C202776420013301F /* db_setup.sh */; };
 		FDAD0F742027767E0013301F /* sig_mariadb-10.2.12-osx10.13-x86_64.pkg in Resources */ = {isa = PBXBuildFile; fileRef = FDAD0F69202776210013301F /* sig_mariadb-10.2.12-osx10.13-x86_64.pkg */; };
 		FDB3A3FE20296C7100331649 /* PlotterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB3A3FD20296C7100331649 /* PlotterViewController.swift */; };
 		FDB3A40020296C9600331649 /* MinerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB3A3FF20296C9600331649 /* MinerViewController.swift */; };
+		FDB755092038EA3800B276FA /* MinerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB755082038EA3800B276FA /* MinerHelper.swift */; };
 		FDF000E02027995400E11D14 /* DependencyInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF000DF2027995400E11D14 /* DependencyInstaller.swift */; };
 		FDF000E220279B4600E11D14 /* db_check.sh in Resources */ = {isa = PBXBuildFile; fileRef = FDF000E120279B4600E11D14 /* db_check.sh */; };
 		FDFBFB78202F6A7200E3AE50 /* PlotterHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFBFB77202F6A7200E3AE50 /* PlotterHelper.swift */; };
@@ -95,8 +97,8 @@
 		FD3A25EC20256A4A00DB3240 /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
 		FD3A25EF2025F80C00DB3240 /* SwiftBasher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftBasher.swift; sourceTree = "<group>"; };
 		FD4710082027A28400F991D4 /* db_burst_ready.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = db_burst_ready.sh; sourceTree = "<group>"; };
-		FD47100A2027A2B200F991D4 /* isMariaDBBurstReady.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = isMariaDBBurstReady.sh; sourceTree = "<group>"; };
-		FD47100C2027A67500F991D4 /* isJava8Installed.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = isJava8Installed.sh; sourceTree = "<group>"; };
+		FD47100A2027A2B200F991D4 /* is_maria_db_burst_ready.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = is_maria_db_burst_ready.sh; sourceTree = "<group>"; };
+		FD47100C2027A67500F991D4 /* is_java8_installed.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = is_java8_installed.sh; sourceTree = "<group>"; };
 		FD47AAD120292F060092BF39 /* wallet_install.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = wallet_install.sh; sourceTree = "<group>"; };
 		FD47AAD320292F900092BF39 /* check_latest_wallet.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = check_latest_wallet.sh; sourceTree = "<group>"; };
 		FD47AAD5202941BF0092BF39 /* is_wallet_installed.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = is_wallet_installed.sh; sourceTree = "<group>"; };
@@ -115,14 +117,16 @@
 		FD976D1C2038A438004CCB70 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		FD976D1E2038A6B5004CCB70 /* sig_JDK_8_Update_162.pkg */ = {isa = PBXFileReference; lastKnownFileType = file; path = sig_JDK_8_Update_162.pkg; sourceTree = "<group>"; };
 		FDAA23572038A85E004E1877 /* sig_JDK_8_Update_162.pkg */ = {isa = PBXFileReference; lastKnownFileType = file; path = sig_JDK_8_Update_162.pkg; sourceTree = "<group>"; };
+		FDAA235A2038D252004E1877 /* PlotterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlotterRequest.swift; sourceTree = "<group>"; };
 		FDAD0F64202632790013301F /* Burst Wallet XBundle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Burst Wallet XBundle.entitlements"; sourceTree = "<group>"; };
 		FDAD0F69202776210013301F /* sig_mariadb-10.2.12-osx10.13-x86_64.pkg */ = {isa = PBXFileReference; lastKnownFileType = file; name = "sig_mariadb-10.2.12-osx10.13-x86_64.pkg"; path = "../../../../Library/Containers/com.drownedcoast.Burst-Wallet-XBundle/Data/sig_mariadb-10.2.12-osx10.13-x86_64.pkg"; sourceTree = "<group>"; };
 		FDAD0F6A202776420013301F /* create_database.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = create_database.sh; sourceTree = "<group>"; };
 		FDAD0F6C202776420013301F /* db_setup.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = db_setup.sh; sourceTree = "<group>"; };
-		FDAD0F6D202776520013301F /* isMariaDBInstalled.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = isMariaDBInstalled.sh; sourceTree = "<group>"; };
-		FDAD0F6E202776520013301F /* isMariaDBPasswordDefault.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = isMariaDBPasswordDefault.sh; sourceTree = "<group>"; };
+		FDAD0F6D202776520013301F /* is_maria_db_installed.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = is_maria_db_installed.sh; sourceTree = "<group>"; };
+		FDAD0F6E202776520013301F /* is_maria_db_password_default.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = is_maria_db_password_default.sh; sourceTree = "<group>"; };
 		FDB3A3FD20296C7100331649 /* PlotterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlotterViewController.swift; sourceTree = "<group>"; };
 		FDB3A3FF20296C9600331649 /* MinerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinerViewController.swift; sourceTree = "<group>"; };
+		FDB755082038EA3800B276FA /* MinerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinerHelper.swift; sourceTree = "<group>"; };
 		FDF000DF2027995400E11D14 /* DependencyInstaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInstaller.swift; sourceTree = "<group>"; };
 		FDF000E120279B4600E11D14 /* db_check.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = db_check.sh; sourceTree = "<group>"; };
 		FDFBFB76202C1F6100E3AE50 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -185,11 +189,12 @@
 		FD3A25BF202563B500DB3240 /* BurstXBundle */ = {
 			isa = PBXGroup;
 			children = (
+				FDAA23592038D23C004E1877 /* models */,
+				FD3A25EE2025F7F500DB3240 /* libs */,
 				FDFBFB79202F6F6900E3AE50 /* helpers */,
 				FD47AAD920294F0A0092BF39 /* BurstXBundle.entitlements */,
 				FDAD0F65202775C00013301F /* Resources */,
 				FDAD0F64202632790013301F /* Burst Wallet XBundle.entitlements */,
-				FD3A25EE2025F7F500DB3240 /* libs */,
 				FD3A25C0202563B500DB3240 /* AppDelegate.swift */,
 				FD3A25C2202563B500DB3240 /* ViewController.swift */,
 				FD3A25EC20256A4A00DB3240 /* WalletViewController.swift */,
@@ -232,6 +237,14 @@
 			path = libs;
 			sourceTree = "<group>";
 		};
+		FDAA23592038D23C004E1877 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				FDAA235A2038D252004E1877 /* PlotterRequest.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
 		FDAD0F65202775C00013301F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,14 +252,14 @@
 				FD976D1E2038A6B5004CCB70 /* sig_JDK_8_Update_162.pkg */,
 				FDAA23572038A85E004E1877 /* sig_JDK_8_Update_162.pkg */,
 				FDAD0F69202776210013301F /* sig_mariadb-10.2.12-osx10.13-x86_64.pkg */,
-				FDAD0F6D202776520013301F /* isMariaDBInstalled.sh */,
-				FDAD0F6E202776520013301F /* isMariaDBPasswordDefault.sh */,
+				FDAD0F6D202776520013301F /* is_maria_db_installed.sh */,
+				FDAD0F6E202776520013301F /* is_maria_db_password_default.sh */,
 				FDAD0F6A202776420013301F /* create_database.sh */,
 				FDAD0F6C202776420013301F /* db_setup.sh */,
 				FDF000E120279B4600E11D14 /* db_check.sh */,
 				FD4710082027A28400F991D4 /* db_burst_ready.sh */,
-				FD47100A2027A2B200F991D4 /* isMariaDBBurstReady.sh */,
-				FD47100C2027A67500F991D4 /* isJava8Installed.sh */,
+				FD47100A2027A2B200F991D4 /* is_maria_db_burst_ready.sh */,
+				FD47100C2027A67500F991D4 /* is_java8_installed.sh */,
 				FD47AAD120292F060092BF39 /* wallet_install.sh */,
 				FD47AAD320292F900092BF39 /* check_latest_wallet.sh */,
 				FD47AAD5202941BF0092BF39 /* is_wallet_installed.sh */,
@@ -273,6 +286,7 @@
 				FD8F5B2A2026032E009F00F2 /* JavaHelper.swift */,
 				FD8F5B2C2026034F009F00F2 /* WalletHelper.swift */,
 				FD8F3A3A2033F201008714F4 /* ConfigHelper.swift */,
+				FDB755082038EA3800B276FA /* MinerHelper.swift */,
 			);
 			path = helpers;
 			sourceTree = "<group>";
@@ -395,13 +409,13 @@
 			files = (
 				FD779ECA2030C9F60045C7E2 /* get_plot_status.sh in Resources */,
 				FD976D1D2038A439004CCB70 /* .gitignore in Resources */,
-				FDAD0F6F2027767E0013301F /* isMariaDBInstalled.sh in Resources */,
+				FDAD0F6F2027767E0013301F /* is_maria_db_installed.sh in Resources */,
 				FDFBFB7B202F7D5A00E3AE50 /* cpu_features.sh in Resources */,
 				FD4710092027A28400F991D4 /* db_burst_ready.sh in Resources */,
 				FD260BA1202FF17100CE528A /* create_plot_command.sh in Resources */,
 				FDFBFB81202F8B8800E3AE50 /* cpu_threads.sh in Resources */,
-				FD47100B2027A2B200F991D4 /* isMariaDBBurstReady.sh in Resources */,
-				FDAD0F702027767E0013301F /* isMariaDBPasswordDefault.sh in Resources */,
+				FD47100B2027A2B200F991D4 /* is_maria_db_burst_ready.sh in Resources */,
+				FDAD0F702027767E0013301F /* is_maria_db_password_default.sh in Resources */,
 				FD1A1093202820C000E7AABA /* sig_JDK_8_Update_162.pkg in Resources */,
 				FDFBFB7F202F8AAB00E3AE50 /* system_memory.sh in Resources */,
 				FDAA23582038A85F004E1877 /* sig_JDK_8_Update_162.pkg in Resources */,
@@ -413,7 +427,7 @@
 				FD976D1F2038A6B5004CCB70 /* sig_JDK_8_Update_162.pkg in Resources */,
 				FD47AAD220292F060092BF39 /* wallet_install.sh in Resources */,
 				FDAD0F732027767E0013301F /* db_setup.sh in Resources */,
-				FD47100D2027A67500F991D4 /* isJava8Installed.sh in Resources */,
+				FD47100D2027A67500F991D4 /* is_java8_installed.sh in Resources */,
 				FD260B9F202FBF5200CE528A /* is_plotter_installed.sh in Resources */,
 				FDAD0F742027767E0013301F /* sig_mariadb-10.2.12-osx10.13-x86_64.pkg in Resources */,
 				FD47AADB202964690092BF39 /* wallet_stop.sh in Resources */,
@@ -465,11 +479,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD1A10952028F46400E7AABA /* util.swift in Sources */,
+				FDAA235B2038D253004E1877 /* PlotterRequest.swift in Sources */,
 				FDB3A40020296C9600331649 /* MinerViewController.swift in Sources */,
 				FDB3A3FE20296C7100331649 /* PlotterViewController.swift in Sources */,
 				FD3A25C3202563B500DB3240 /* ViewController.swift in Sources */,
 				FDF000E02027995400E11D14 /* DependencyInstaller.swift in Sources */,
 				FD3A25C1202563B500DB3240 /* AppDelegate.swift in Sources */,
+				FDB755092038EA3800B276FA /* MinerHelper.swift in Sources */,
 				FD8F5B2D2026034F009F00F2 /* WalletHelper.swift in Sources */,
 				FD8F5B2920260321009F00F2 /* MariaDBHelper.swift in Sources */,
 				FDFBFB78202F6A7200E3AE50 /* PlotterHelper.swift in Sources */,

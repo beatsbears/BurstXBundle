@@ -21,7 +21,7 @@ class JavaHelper {
     init() {
         let bundle = Bundle.main
         self.pathInstaller = bundle.path(forResource: "sig_JDK_8_Update_162", ofType: "pkg")!
-        self.pathIsInstalledScript = bundle.path(forResource: "isJava8Installed", ofType: "sh")!
+        self.pathIsInstalledScript = bundle.path(forResource: "is_java8_installed", ofType: "sh")!
     }
 
     func isJava8Installed() -> Bool {

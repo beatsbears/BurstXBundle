@@ -19,6 +19,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     @IBAction func openSupport(_ sender: NSMenuItem) {
-        if let url = URL(string: "https://github.com/PoC-Consortium/burstcoin"), NSWorkspace.shared.open(url) {}
+        if let url = URL(string: "https://github.com/beatsbears/BurstXBundle/wiki"),
+            NSWorkspace.shared.open(url) {}
     }
 }

@@ -47,13 +47,17 @@ class PlotterViewController: NSViewController {
     @IBOutlet weak var plotterCPURadio0: NSButton!
     @IBOutlet weak var plotterCPURadio1: NSButton!
     @IBOutlet weak var plotterCPURadio2: NSButton!
+    @IBOutlet weak var plotterResetButton: NSButton!
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     override func viewDidLoad() {
         super.viewDidLoad()
+        Logger.log(message: "Plotter Tab opened.", event: .debug)
+
         self.plotterProgressBar.isHidden = true
         self.plotterProgressPercentLabel.isHidden = true
         self.plotterDebugLabel.isHidden = true
+        self.plotterResetButton.isHidden = true
 
         self.plotterFileSelectorPath.url = self.fileLocation
         // Do view setup here.
@@ -100,18 +104,21 @@ class PlotterViewController: NSViewController {
                 self.plotterPlotSizeTextField.stringValue =
                     String(openSpace) + " GB"
                 self.plotterPlotSizeStepper.integerValue = openSpace
+                Logger.log(message: "New plot location selected: " + self.fileLocation.path, event: .info)
             }
         }
     }
 
     @IBAction func plotterStartPlottingButtonClick(_ sender: NSButton) {
-        self.plotter.plotFile(address: self.plotterWalletIDTextField.stringValue,
-                              filePath: self.fileLocationPath,
-                              startingNonce: self.plotterStartingNonceTextField.stringValue,
-                              nonces: self.plotterPlotSizeTextField.stringValue,
-                              staggerSize: self.plotterMemUsageTextField.stringValue,
-                              threads: self.plotterThreadCountTextField.stringValue,
-                              coreMode: String(self.plotter.maxCompileOption))
+        let plotRequest = PlotterRequest(address: self.plotterWalletIDTextField.stringValue,
+                                         path: self.fileLocationPath,
+                                         startingNonce: self.plotterStartingNonceTextField.stringValue,
+                                         nonces: self.plotterPlotSizeTextField.stringValue,
+                                         staggerSize: self.plotterMemUsageTextField.stringValue,
+                                         threads: self.plotterThreadCountTextField.stringValue,
+                                         coreMode: self.plotter.maxCompileOption)
+        Logger.log(message: "Start plotting request sent.", event: .info)
+        self.plotter.plotFile(request: plotRequest)
         self.startPlotting()
     }
 
@@ -120,6 +127,7 @@ class PlotterViewController: NSViewController {
     }
 
     @IBAction func plotterHelpButtonCLick(_ sender: NSButton) {
+        if let url = URL(string: "https://github.com/beatsbears/BurstXBundle/wiki/Plotter"), NSWorkspace.shared.open(url) {}
     }
 
     @IBAction func plotterMemUsageStepperClick(_ sender: NSStepper) {
@@ -144,6 +152,24 @@ class PlotterViewController: NSViewController {
         self.plotterPlotSizeTextField.stringValue = String(sender.integerValue) + " GB"
     }
 
+    @IBAction func plotterResetButtonClick(_ sender: NSButton) {
+        self.plotterProgressBar.isHidden = true
+        self.plotterProgressPercentLabel.isHidden = true
+        self.plotterDebugLabel.isHidden = true
+
+        self.fileLocationPath = self.fileLocation.path
+        self.maxMemory = self.plotter.getMaxMemory()
+        self.maxThreads = self.plotter.getMaxThreads()
+        self.plotterMemUsageTextField.stringValue = String(self.maxMemory) + " GB"
+        self.plotterMemUsageStepper.integerValue = Int(self.maxMemory)
+        self.plotterThreadCountTextField.stringValue = String(self.maxThreads)
+        self.plotterThreadCountStepper.integerValue = Int(self.maxThreads)
+        let tmpPlotSize = String(self.plotter.getOpenSpace(path: self.fileLocationPath))
+        self.plotterPlotSizeTextField.stringValue = tmpPlotSize + " GB"
+        self.plotterPlotSizeStepper.integerValue = Int(tmpPlotSize)!
+        self.plotterStartingNonceTextField.stringValue = "0"
+    }
+
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Functions
     func startPlotting() {
@@ -162,15 +188,17 @@ class PlotterViewController: NSViewController {
 
         self.plotterStartPlottingButton.isEnabled = false
 
-        self.timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(PlotterViewController.checkStatus), userInfo: nil, repeats: true)
+        self.timer = Timer.scheduledTimer(timeInterval: 10.0, target: self, selector: #selector(PlotterViewController.checkStatus), userInfo: nil, repeats: true)
     }
 
     func stopPlotting() {
+        Logger.log(message: "Plotting complete.", event: .info)
         self.plotterStatusIndicatorLabel.stringValue = "Idle"
         self.plotterStatusIndicatorLabel.backgroundColor = NSColor.orange
         self.plotterDebugLabel.stringValue = "Done"
         self.plotterStartPlottingButton.isEnabled = true
         self.timer.invalidate()
+        self.plotterResetButton.isHidden = false
     }
 
     @objc func checkStatus() {

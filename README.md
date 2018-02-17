@@ -12,7 +12,7 @@ The Burst XBundle is a macOS Wrapper/Installer/Launcher for the BRS Wallet and o
 - [creepMiner](https://github.com/Creepsky/creepMiner)
 
 ## Getting Started
-1. Download the zip file for the latest [release](https://github.com/beatsbears/BurstXBundle).
+1. Download the zip file for the latest [release](https://github.com/beatsbears/BurstXBundle/releases).
 2. Unzip and open XBundle.
 3. In the Wallet tab click the `Install` button and enter your password when prompted to install wallet dependencies.
 4. Click `start`.

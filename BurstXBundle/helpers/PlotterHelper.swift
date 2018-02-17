@@ -75,7 +75,13 @@ class PlotterHelper {
     }
 
     func installPlotter(cpuMode: Int) {
-        _ = swiftBash.bash(command: "sh", arguments: [self.pathInstaller, String(cpuMode)])
+        Logger.log(message: "Installing Plotter", event: .info)
+        let installOutput = swiftBash.bash(command: "sh", arguments: [self.pathInstaller, String(cpuMode)])
+        if installOutput.last == "1" {
+            Logger.log(message: "Plotter Installed Successfully", event: .info)
+        } else {
+            Logger.log(message: "Error installing Plotter: " + installOutput, event: .error)
+        }
     }
 
     func getCPUFeatures() -> [String] {
@@ -109,33 +115,41 @@ class PlotterHelper {
         return self.maxCapacity
     }
 
-    func plotFile(address: String, filePath: String, startingNonce: String,
-                  nonces: String, staggerSize: String, threads: String, coreMode: String) {
+    func plotFile(request: PlotterRequest) {
 
         let plotTime = String(NSDate().timeIntervalSince1970)
 
         // GB mem to stagger
-        let finalStagger = String((Int(staggerSize.dropLast(3))! * 1048576) / 256)
-
+        let finalStagger = String((Int(request.staggerSize.dropLast(3))! * 1048576) / 256)
+        Logger.log(message: "Computed Stagger: " + finalStagger, event: .info)
         // GB space to nonces
-        let finalNonces = String(Int(nonces.dropLast(3))! * 1024 * 4)
+        let finalNonces = String(Int(request.nonces.dropLast(3))! * 1024 * 4)
+        Logger.log(message: "Computed Nonces: " + finalNonces, event: .info)
 
         // Call in background
         DispatchQueue.global(qos: .default).async {
+            Logger.log(message: "Starting Plotting with arguments: "
+                + request.address + " : "
+                + request.path + " : "
+                + request.startingNonce + " : "
+                + finalNonces + " : "
+                + finalStagger + " : "
+                + request.threads + " : "
+                + String(request.coreMode), event: .info)
             _ = self.swiftBash.bash(command: "sh", arguments: [self.pathMakePlot,
-                                                               address,
-                                                               filePath,
-                                                               startingNonce,
+                                                               request.address,
+                                                               request.path,
+                                                               request.startingNonce,
                                                                finalNonces,
                                                                finalStagger,
-                                                               threads,
-                                                               coreMode,
+                                                               request.threads,
+                                                               String(request.coreMode),
                                                                plotTime])
             print(self.swiftBash.bash(command: "sh", arguments: [self.pathRunPlotCommand]))
         }
 
         self.currentPlottingLog = plotTime + ".log"
-        self.currentPlottingFile = address + "_" + startingNonce + "_" + finalNonces + "_" + finalStagger
+        self.currentPlottingFile = request.address + "_" + request.startingNonce + "_" + finalNonces + "_" + finalStagger
     }
 
     func getPlotterStatus() -> [String: String] {
@@ -149,9 +163,8 @@ class PlotterHelper {
             if rawLogLine.contains("\n") {
                 stripperLogLine = rawLogLine.components(separatedBy: CharacterSet.newlines).last!
             }
-            print(stripperLogLine)
+            Logger.log(message: "Raw plotter status: " + stripperLogLine, event: .debug)
             if stripperLogLine.range(of: "Percent done") != nil {
-                print(stripperLogLine)
                 let endIndex = stripperLogLine.range(of: "%")!.lowerBound
                 pct = String(stripperLogLine[..<endIndex]).trimmingCharacters(in: .whitespacesAndNewlines)
                 status = "Plotting"
