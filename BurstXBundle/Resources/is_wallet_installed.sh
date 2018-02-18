@@ -3,7 +3,7 @@
 #
 # Created by Andrew Scott on 2/5/18.
 
-if [ ! -d "./burscoin" ]; then
+if [ ! -d "./burstcoin" ]; then
     echo "0"
 else
     echo "1"

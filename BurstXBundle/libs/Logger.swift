@@ -32,13 +32,35 @@ class Logger {
                    column: Int = #column,
                    funcName: String = #function) {
 
+        let message = "\(Date().toString()) \(event.rawValue)[\(sourceFileName(filePath: fileName))]:\(line) \(column) \(funcName) -> \(message)"
         #if DEBUG
-            print("\(Date().toString()) \(event.rawValue)[\(sourceFileName(filePath: fileName))]:\(line) \(column) \(funcName) -> \(message)")
+            print(message)
         #endif
+        writeToLog(message: message)
     }
-    private class func sourceFileName(filePath: String) -> String {
+
+     private class func sourceFileName(filePath: String) -> String {
         let components = filePath.components(separatedBy: "/")
         return components.isEmpty ? "" : components.last!
+    }
+
+    class func writeToLog(message: String) {
+        let dir = FileManager.default.urls(for: FileManager.SearchPathDirectory.cachesDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).first!
+        let fileurl =  dir.appendingPathComponent("burstxbundle.log")
+        let logFormatMessage = message + "\n"
+        let data = logFormatMessage.data(using: .utf8, allowLossyConversion: false)!
+
+        if FileManager.default.fileExists(atPath: fileurl.path) {
+            if let fileHandle = try? FileHandle(forUpdating: fileurl) {
+                fileHandle.seekToEndOfFile()
+                fileHandle.write(data)
+                fileHandle.closeFile()
+            }
+        } else {
+            do {
+                try data.write(to: fileurl, options: Data.WritingOptions.atomic)
+            } catch {}
+        }
     }
 }
 

@@ -31,14 +31,20 @@ class WalletHelper {
 
     func isWalletInstalled() -> Bool {
         // Return whether or not Wallet appears to be installed
-        if swiftBash.bash(command: "sh", arguments: [self.pathInstalled]) == "1" {
+        let isWalletInstalled = swiftBash.bash(command: "sh", arguments: [self.pathInstalled])
+        if isWalletInstalled == "1" {
             self.isInstalled = true
+            Logger.log(message: "BRS wallet appears to be installed.", event: .info)
+        } else {
+            self.isInstalled = false
+            Logger.log(message: "BRS wallet does not appear to be installed.", event: .warn)
         }
         return self.isInstalled
     }
 
     func installWallet() -> Bool {
         // Installs wallet and configures with values from mariaDB setup
+        Logger.log(message: "Starting wallet install process.", event: .info)
         _ = swiftBash.bash(command: "sh", arguments: [self.pathInstaller, checkLatestWalletVersion()])
         return true
     }
@@ -46,12 +52,14 @@ class WalletHelper {
     func checkLatestWalletVersion() -> String {
         // Gets latest release version from github
         let latestRelease = swiftBash.bash(command: "sh", arguments: [self.pathLatestVersion])
+        Logger.log(message: "Latest detected BRS wallet version: " + latestRelease, event: .info)
         return latestRelease
     }
 
     func startWallet() -> Bool {
         // Starts wallet
         DispatchQueue.global(qos: .default).async {
+            Logger.log(message: "Starting wallet..", event: .debug)
             _ = self.swiftBash.bash(command: "sh", arguments: [self.pathStarter, self.checkLatestWalletVersion()])
         }
         return true
@@ -60,6 +68,7 @@ class WalletHelper {
     func stopWallet() -> Bool {
         // Stops wallet processes
         DispatchQueue.global(qos: .default).async {
+            Logger.log(message: "Stopping wallet..", event: .debug)
             _ = self.swiftBash.bash(command: "sh", arguments: [self.pathStopper])
         }
         return true

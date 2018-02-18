@@ -16,6 +16,7 @@ class MariaDBHelper {
     // local vars
     var isInstalled: Bool = false
     var isDefaultPassword: Bool = false
+    var isMariaDBReady: Bool = false
 
     // paths
     var pathIsInstalledScript: String = ""
@@ -39,12 +40,17 @@ class MariaDBHelper {
         // Return whether or not mariaDB appears to be installed
         if swiftBash.bash(command: "sh", arguments: [self.pathIsInstalledScript]) == "1" {
             self.isInstalled = true
+            Logger.log(message: "MariaDB appears to be install.", event: .info)
+        } else {
+            self.isInstalled = false
+            Logger.log(message: "MariaDB does not appear to be install.", event: .warn)
         }
         return self.isInstalled
     }
 
     func installMariaDB() -> Bool {
         // Open the installer pkg
+        Logger.log(message: "Starting MariaDB installer.", event: .info)
         _ = swiftBash.bash(command: "open", arguments: [self.pathInstaller])
         return true
     }
@@ -53,7 +59,7 @@ class MariaDBHelper {
         var installed = false
         while installed == false {
             util.delay(count: 3, closure: {
-                print("Checking if MariaDB is installed..")
+                Logger.log(message: "Checking if MariaDB install has completed...", event: .debug)
             })
             installed = self.isMariaDBInstalled()
         }
@@ -62,7 +68,7 @@ class MariaDBHelper {
 
     func createMariaDBDatabase() -> Bool {
         // create new DB for Burst Wallet
-        print("create Burst DB")
+        Logger.log(message: "Creating database for burst wallet.", event: .info)
         _ = swiftBash.bash(command: "sh", arguments: [self.pathDBSetup])
         return true
     }
@@ -71,6 +77,10 @@ class MariaDBHelper {
         // Return whether or not mariaDB default password has been set
         if swiftBash.bash(command: "sh", arguments: [self.pathDBCheck]) == "1" {
             self.isDefaultPassword = true
+            Logger.log(message: "MariaDB root password is default.", event: .info)
+        } else {
+            self.isDefaultPassword = false
+            Logger.log(message: "MariaDB root password is unknown.", event: .error)
         }
         return self.isDefaultPassword
     }
@@ -78,9 +88,13 @@ class MariaDBHelper {
     func isMariaDBBurstReady() -> Bool {
         // Return whether the burst database and user exist on mariaDB
         if swiftBash.bash(command: "sh", arguments: [self.pathCheckDBScript]) == "1" {
-            self.isDefaultPassword = true
+            self.isMariaDBReady = true
+            Logger.log(message: "MariaDB is ready to run wallet.", event: .info)
+        } else {
+            self.isMariaDBReady = false
+            Logger.log(message: "MariaDB is not ready to run wallet.", event: .error)
         }
-        return self.isDefaultPassword
+        return self.isMariaDBReady
     }
 
 }

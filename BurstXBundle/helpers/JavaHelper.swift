@@ -28,11 +28,16 @@ class JavaHelper {
         // Return whether or not Java appears to be installed
         if swiftBash.bash(command: "sh", arguments: [self.pathIsInstalledScript]) == "1" {
             self.isInstalled = true
+            Logger.log(message: "Java 8 appears to be installed.", event: .info)
+        } else {
+            self.isInstalled = false
+            Logger.log(message: "Java 8 does not appear to be installed.", event: .warn)
         }
         return self.isInstalled
     }
 
     func installJava() -> Bool {
+        Logger.log(message: "Starting Java8 install process.", event: .info)
         _ = swiftBash.bash(command: "open", arguments: [self.pathInstaller])
         self.isInstalled = true
         return self.isInstalled

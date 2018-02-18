@@ -5,4 +5,4 @@
 
 VAR=${BASH_SOURCE%/*}
 DIR=$(dirname "${VAR}")
-osascript -e "do shell script \"$DIR/Resources/isMariaDBPasswordDefault.sh\" with administrator privileges"
+osascript -e "do shell script \"$DIR/Resources/is_maria_db_password_default.sh\" with administrator privileges"

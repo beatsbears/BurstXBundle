@@ -73,20 +73,20 @@ class DependencyInstaller {
         var tmp_missing = missing
         while tmp_missing.count > 0 {
             if tmp_missing["java"] ?? false {
-                print("Installing Java")
+                Logger.log(message: "Installing Java via DependencyInstaller", event: .info)
                 self.isJavaInstalled = java.installJava()
                 tmp_missing.removeValue(forKey: "java")
             } else if tmp_missing["mariaDB"] ?? false {
-                print("Installing MariaDB")
+                Logger.log(message: "Installing MariaDB via DependencyInstaller", event: .info)
                 self.isMariaDBInstalled = maria.installMariaDB()
                 maria.waitForMariaDBInstallation()
                 tmp_missing.removeValue(forKey: "mariaDB")
             } else if tmp_missing["mariaBurst"] ?? false {
-                print("Creating Burst Database")
+                Logger.log(message: "Creating Burst database via DependencyInstaller", event: .info)
                 self.isMariaDBReady = maria.createMariaDBDatabase()
                 tmp_missing.removeValue(forKey: "mariaBurst")
             } else if tmp_missing["wallet"] ?? false {
-                print("Installing Wallet")
+                Logger.log(message: "Installing BRS Wallet via DependencyInstaller", event: .info)
                 self.isWalletInstalled = wallet.installWallet()
                 tmp_missing.removeValue(forKey: "wallet")
             }

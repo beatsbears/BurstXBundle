@@ -47,12 +47,12 @@ class WalletViewController: NSViewController {
             runInstallerCheck()
         }
         if self.STATE == "Offline" {
-            Logger.log(message: "Wallet is offline.", event: .info)
+            Logger.log(message: "Wallet is starting.", event: .info)
             self.walletStateRunning()
             _ = wallet.startWallet()
         }
         if self.STATE == "Running" {
-            Logger.log(message: "Wallet is running.", event: .info)
+            Logger.log(message: "Wallet is stopping.", event: .info)
             _ = wallet.stopWallet()
             walletStateOffline()
         }
@@ -176,7 +176,12 @@ class WalletViewController: NSViewController {
         // Dependencies
         let dependenciesMet = self.util.getDefault(key: "DEPENDENCIES_MET", type: true)
         if dependenciesMet {
-            self.walletStateOffline()
+            // wallet installed
+            if self.wallet.isWalletInstalled() {
+                self.walletStateOffline()
+            } else {
+                self.walletStateNotFound()
+            }
         } else {
             self.walletStateNotFound()
         }
