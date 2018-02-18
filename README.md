@@ -1,7 +1,7 @@
 # Burst XBundle
 
 [![Get Support at https://discord.gg/NKXGM6N](https://img.shields.io/badge/join-discord-blue.svg)](https://discordapp.com/invite/NnVBPJX)
-[![MIT](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE)[![Build Status](https://travis-ci.org/beatsbears/lepto.svg?branch=master)](https://travis-ci.org/beatsbears/BurstXBundle)
+[![MIT](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE) [![Build Status](https://travis-ci.org/beatsbears/BurstXBundle.svg?branch=master)](https://travis-ci.org/beatsbears/BurstXBundle)
 
 ## Description
 The Burst XBundle is a macOS Wrapper/Installer/Launcher for the BRS Wallet and other Burst tools.
