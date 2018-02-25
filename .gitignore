@@ -7,8 +7,12 @@
 ## Build generated
 build/
 DerivedData
+Carthage
+Cartfile.resolved
 
 ## Big files
 BurstXBundle/Resources/sig_mariadb-10.2.12-osx10.13-x86_64.pkg
 BurstXBundle/Resources/sig_JDK_8_Update_162.pkg
 
+## Miner
+BurstXBundle/Resources/creepMiner

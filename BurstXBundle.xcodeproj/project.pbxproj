@@ -12,6 +12,8 @@
 		FD260B9D202F9C7C00CE528A /* directory_open_space.sh in Resources */ = {isa = PBXBuildFile; fileRef = FD260B9C202F9C7C00CE528A /* directory_open_space.sh */; };
 		FD260B9F202FBF5200CE528A /* is_plotter_installed.sh in Resources */ = {isa = PBXBuildFile; fileRef = FD260B9E202FBF5200CE528A /* is_plotter_installed.sh */; };
 		FD260BA1202FF17100CE528A /* create_plot_command.sh in Resources */ = {isa = PBXBuildFile; fileRef = FD260BA0202FF17100CE528A /* create_plot_command.sh */; };
+		FD29904E203A27CD000C3C93 /* is_miner_installed.sh in Resources */ = {isa = PBXBuildFile; fileRef = FD29904D203A27CD000C3C93 /* is_miner_installed.sh */; };
+		FD299050203A2E83000C3C93 /* install_miner.sh in Resources */ = {isa = PBXBuildFile; fileRef = FD29904F203A2E83000C3C93 /* install_miner.sh */; };
 		FD3A25C1202563B500DB3240 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3A25C0202563B500DB3240 /* AppDelegate.swift */; };
 		FD3A25C3202563B500DB3240 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3A25C2202563B500DB3240 /* ViewController.swift */; };
 		FD3A25C5202563B500DB3240 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD3A25C4202563B500DB3240 /* Assets.xcassets */; };
@@ -28,6 +30,8 @@
 		FD47AAD6202941BF0092BF39 /* is_wallet_installed.sh in Resources */ = {isa = PBXBuildFile; fileRef = FD47AAD5202941BF0092BF39 /* is_wallet_installed.sh */; };
 		FD47AAD8202945190092BF39 /* wallet_start.sh in Resources */ = {isa = PBXBuildFile; fileRef = FD47AAD7202945190092BF39 /* wallet_start.sh */; };
 		FD47AADB202964690092BF39 /* wallet_stop.sh in Resources */ = {isa = PBXBuildFile; fileRef = FD47AADA202964690092BF39 /* wallet_stop.sh */; };
+		FD56A3A02041E06400520574 /* MinerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD56A39F2041E06400520574 /* MinerRequest.swift */; };
+		FD56A3A22043347500520574 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = FD56A3A12043347500520574 /* Cartfile */; };
 		FD779EC82030C1E60045C7E2 /* run_plot_command.sh in Resources */ = {isa = PBXBuildFile; fileRef = FD779EC72030C1E60045C7E2 /* run_plot_command.sh */; };
 		FD779ECA2030C9F60045C7E2 /* get_plot_status.sh in Resources */ = {isa = PBXBuildFile; fileRef = FD779EC92030C9F60045C7E2 /* get_plot_status.sh */; };
 		FD8F3A3B2033F201008714F4 /* ConfigHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8F3A3A2033F201008714F4 /* ConfigHelper.swift */; };
@@ -49,6 +53,10 @@
 		FDB3A3FE20296C7100331649 /* PlotterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB3A3FD20296C7100331649 /* PlotterViewController.swift */; };
 		FDB3A40020296C9600331649 /* MinerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB3A3FF20296C9600331649 /* MinerViewController.swift */; };
 		FDB755092038EA3800B276FA /* MinerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB755082038EA3800B276FA /* MinerHelper.swift */; };
+		FDB7EAE32043361A003D6813 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDB7EAE22043361A003D6813 /* SwiftyJSON.framework */; };
+		FDB7EAE42043361A003D6813 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FDB7EAE22043361A003D6813 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FDB7EAE72043370B003D6813 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = FDB7EAE62043370B003D6813 /* .swiftlint.yml */; };
+		FDB7EAE920434043003D6813 /* creepMiner in Resources */ = {isa = PBXBuildFile; fileRef = FDB7EAE820434042003D6813 /* creepMiner */; };
 		FDF000E02027995400E11D14 /* DependencyInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF000DF2027995400E11D14 /* DependencyInstaller.swift */; };
 		FDF000E220279B4600E11D14 /* db_check.sh in Resources */ = {isa = PBXBuildFile; fileRef = FDF000E120279B4600E11D14 /* db_check.sh */; };
 		FDFBFB78202F6A7200E3AE50 /* PlotterHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFBFB77202F6A7200E3AE50 /* PlotterHelper.swift */; };
@@ -75,12 +83,28 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		FDB7EAE52043361A003D6813 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FDB7EAE42043361A003D6813 /* SwiftyJSON.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		FD1A1092202820C000E7AABA /* sig_JDK_8_Update_162.pkg */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.installer-pkg"; path = sig_JDK_8_Update_162.pkg; sourceTree = "<group>"; };
 		FD1A10942028F46400E7AABA /* util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = util.swift; sourceTree = "<group>"; };
 		FD260B9C202F9C7C00CE528A /* directory_open_space.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = directory_open_space.sh; sourceTree = "<group>"; };
 		FD260B9E202FBF5200CE528A /* is_plotter_installed.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = is_plotter_installed.sh; sourceTree = "<group>"; };
 		FD260BA0202FF17100CE528A /* create_plot_command.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = create_plot_command.sh; sourceTree = "<group>"; };
+		FD29904D203A27CD000C3C93 /* is_miner_installed.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = is_miner_installed.sh; sourceTree = "<group>"; };
+		FD29904F203A2E83000C3C93 /* install_miner.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = install_miner.sh; sourceTree = "<group>"; };
 		FD3A25BD202563B500DB3240 /* BurstXBundle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BurstXBundle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD3A25C0202563B500DB3240 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD3A25C2202563B500DB3240 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +129,8 @@
 		FD47AAD7202945190092BF39 /* wallet_start.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = wallet_start.sh; sourceTree = "<group>"; };
 		FD47AAD920294F0A0092BF39 /* BurstXBundle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BurstXBundle.entitlements; sourceTree = "<group>"; };
 		FD47AADA202964690092BF39 /* wallet_stop.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = wallet_stop.sh; sourceTree = "<group>"; };
+		FD56A39F2041E06400520574 /* MinerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinerRequest.swift; sourceTree = "<group>"; };
+		FD56A3A12043347500520574 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		FD779EC72030C1E60045C7E2 /* run_plot_command.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = run_plot_command.sh; sourceTree = "<group>"; };
 		FD779EC92030C9F60045C7E2 /* get_plot_status.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = get_plot_status.sh; sourceTree = "<group>"; };
 		FD8F3A3A2033F201008714F4 /* ConfigHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigHelper.swift; sourceTree = "<group>"; };
@@ -127,6 +153,9 @@
 		FDB3A3FD20296C7100331649 /* PlotterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlotterViewController.swift; sourceTree = "<group>"; };
 		FDB3A3FF20296C9600331649 /* MinerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinerViewController.swift; sourceTree = "<group>"; };
 		FDB755082038EA3800B276FA /* MinerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinerHelper.swift; sourceTree = "<group>"; };
+		FDB7EAE22043361A003D6813 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/Mac/SwiftyJSON.framework; sourceTree = "<group>"; };
+		FDB7EAE62043370B003D6813 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
+		FDB7EAE820434042003D6813 /* creepMiner */ = {isa = PBXFileReference; lastKnownFileType = folder; path = creepMiner; sourceTree = "<group>"; };
 		FDF000DF2027995400E11D14 /* DependencyInstaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInstaller.swift; sourceTree = "<group>"; };
 		FDF000E120279B4600E11D14 /* db_check.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = db_check.sh; sourceTree = "<group>"; };
 		FDFBFB76202C1F6100E3AE50 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -142,6 +171,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDB7EAE32043361A003D6813 /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,6 +195,9 @@
 		FD3A25B4202563B500DB3240 = {
 			isa = PBXGroup;
 			children = (
+				FDB7EAE62043370B003D6813 /* .swiftlint.yml */,
+				FDB7EAE22043361A003D6813 /* SwiftyJSON.framework */,
+				FD56A3A12043347500520574 /* Cartfile */,
 				FD976D1C2038A438004CCB70 /* .gitignore */,
 				FD976D1A20389D92004CCB70 /* LICENSE */,
 				FD8F3A3E2033F6A8008714F4 /* .travis.yml */,
@@ -241,6 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				FDAA235A2038D252004E1877 /* PlotterRequest.swift */,
+				FD56A39F2041E06400520574 /* MinerRequest.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -248,6 +282,7 @@
 		FDAD0F65202775C00013301F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FDB7EAE820434042003D6813 /* creepMiner */,
 				FD1A1092202820C000E7AABA /* sig_JDK_8_Update_162.pkg */,
 				FD976D1E2038A6B5004CCB70 /* sig_JDK_8_Update_162.pkg */,
 				FDAA23572038A85E004E1877 /* sig_JDK_8_Update_162.pkg */,
@@ -274,6 +309,8 @@
 				FD260BA0202FF17100CE528A /* create_plot_command.sh */,
 				FD779EC72030C1E60045C7E2 /* run_plot_command.sh */,
 				FD779EC92030C9F60045C7E2 /* get_plot_status.sh */,
+				FD29904D203A27CD000C3C93 /* is_miner_installed.sh */,
+				FD29904F203A2E83000C3C93 /* install_miner.sh */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -302,6 +339,7 @@
 				FD3A25BA202563B500DB3240 /* Frameworks */,
 				FD3A25BB202563B500DB3240 /* Resources */,
 				FDFBFB75202BB85000E3AE50 /* ShellScript */,
+				FDB7EAE52043361A003D6813 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -407,8 +445,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDB7EAE72043370B003D6813 /* .swiftlint.yml in Resources */,
+				FD56A3A22043347500520574 /* Cartfile in Resources */,
 				FD779ECA2030C9F60045C7E2 /* get_plot_status.sh in Resources */,
 				FD976D1D2038A439004CCB70 /* .gitignore in Resources */,
+				FDB7EAE920434043003D6813 /* creepMiner in Resources */,
 				FDAD0F6F2027767E0013301F /* is_maria_db_installed.sh in Resources */,
 				FDFBFB7B202F7D5A00E3AE50 /* cpu_features.sh in Resources */,
 				FD4710092027A28400F991D4 /* db_burst_ready.sh in Resources */,
@@ -422,10 +463,12 @@
 				FD976D1B20389D92004CCB70 /* LICENSE in Resources */,
 				FD47AAD6202941BF0092BF39 /* is_wallet_installed.sh in Resources */,
 				FD47AAD420292F910092BF39 /* check_latest_wallet.sh in Resources */,
+				FD299050203A2E83000C3C93 /* install_miner.sh in Resources */,
 				FDFBFB7D202F89ED00E3AE50 /* plotter_install.sh in Resources */,
 				FDAD0F712027767E0013301F /* create_database.sh in Resources */,
 				FD976D1F2038A6B5004CCB70 /* sig_JDK_8_Update_162.pkg in Resources */,
 				FD47AAD220292F060092BF39 /* wallet_install.sh in Resources */,
+				FD29904E203A27CD000C3C93 /* is_miner_installed.sh in Resources */,
 				FDAD0F732027767E0013301F /* db_setup.sh in Resources */,
 				FD47100D2027A67500F991D4 /* is_java8_installed.sh in Resources */,
 				FD260B9F202FBF5200CE528A /* is_plotter_installed.sh in Resources */,
@@ -494,6 +537,7 @@
 				FD8F3A412033FA2B008714F4 /* Logger.swift in Sources */,
 				FD8F3A3B2033F201008714F4 /* ConfigHelper.swift in Sources */,
 				FD8F5B2B2026032E009F00F2 /* JavaHelper.swift in Sources */,
+				FD56A3A02041E06400520574 /* MinerRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -653,6 +697,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = QH9CXRPBBL;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = BurstXBundle/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.drownedcoast.Burst-Wallet-XBundle";
@@ -668,6 +716,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = QH9CXRPBBL;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = BurstXBundle/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.drownedcoast.Burst-Wallet-XBundle";

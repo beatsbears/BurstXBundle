@@ -5,12 +5,12 @@
 
 git clone https://github.com/k06a/mjminer.git
 if [ ! -d "./mjminer" ]; then
-    echo "'https://github.com/k06a/mjminer.git1/' not found or unreachable."
+    echo "'https://github.com/k06a/mjminer.git/' not found or unreachable."
 else
     mv mjminer/ mjminer-master/
     cd mjminer-master/
     make AVX2=$1
-    if [ ! "./mjminer-master/plot" ]; then
+    if [ ! "./plot" ]; then
         echo "mjminer compilation failed."
     fi
     echo "1"

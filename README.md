@@ -8,7 +8,8 @@ The Burst XBundle is a macOS Wrapper/Installer/Launcher for the BRS Wallet and o
 
 ## XBundle Includes
 - [BRS Wallet from POCC](https://github.com/PoC-Consortium/burstcoin)
-- [mjminer plotter and miner fork from k06a](https://github.com/k06a/mjminer)
+- [mjminer plotter fork from k06a](https://github.com/k06a/mjminer)
+- [creepMiner from Creepsky](https://github.com/Creepsky/creepMiner)
 
 ## Getting Started
 1. Download the zip file for the latest [release](https://github.com/beatsbears/BurstXBundle/releases).
