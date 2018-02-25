@@ -1,6 +1,10 @@
 language: objective-c
 os: osx
 osx_image: xcode9
+before_install:
+- brew update
+- brew install carthage
+- carthage bootstrap --verbose
 script:
 - swiftlint
 - xcodebuild -project BurstXBundle.xcodeproj -scheme BurstXBundle -sdk macosx10.13 CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO EXCLUDED_SOURCE_FILE_NAMES=*.pkg
