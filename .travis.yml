@@ -6,4 +6,4 @@ before_install:
 - carthage bootstrap --verbose
 script:
 - swiftlint
-- xcodebuild -project BurstXBundle.xcodeproj -scheme BurstXBundle -sdk macosx10.13 CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO EXCLUDED_SOURCE_FILE_NAMES=*.pkg creepMiner/*
+- xcodebuild -project BurstXBundle.xcodeproj -scheme BurstXBundle -sdk macosx10.13 CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO EXCLUDED_SOURCE_FILE_NAMES="*.pkg creepMiner/*"
