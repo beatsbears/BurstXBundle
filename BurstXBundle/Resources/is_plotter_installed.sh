@@ -3,7 +3,7 @@
 #
 # Created by Andrew Scott on 2/10/18.
 
-if [ ! -d "./creepMiner" ]; then
+if [ ! -d "./mjminer-master" ]; then
     echo "0"
 else
     echo "1"

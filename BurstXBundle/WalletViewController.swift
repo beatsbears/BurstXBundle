@@ -128,7 +128,6 @@ class WalletViewController: NSViewController {
         let alert = NSAlert()
         alert.messageText = "Missing Dependencies"
         alert.addButton(withTitle: "OK")
-        alert.showsHelp = true
         alert.informativeText =
             "Please confirm installation of missing dependencies: "
             + Array(missing.keys).joined(separator: "\n ")

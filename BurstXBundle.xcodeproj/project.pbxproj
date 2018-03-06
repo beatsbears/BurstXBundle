@@ -57,6 +57,8 @@
 		FDB7EAE42043361A003D6813 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FDB7EAE22043361A003D6813 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FDB7EAE72043370B003D6813 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = FDB7EAE62043370B003D6813 /* .swiftlint.yml */; };
 		FDB7EAE920434043003D6813 /* creepMiner in Resources */ = {isa = PBXBuildFile; fileRef = FDB7EAE820434042003D6813 /* creepMiner */; };
+		FDB7EAEB2044E3AE003D6813 /* miner_start.sh in Resources */ = {isa = PBXBuildFile; fileRef = FDB7EAEA2044E3AE003D6813 /* miner_start.sh */; };
+		FDB7EAED2044E41F003D6813 /* miner_stop.sh in Resources */ = {isa = PBXBuildFile; fileRef = FDB7EAEC2044E41F003D6813 /* miner_stop.sh */; };
 		FDF000E02027995400E11D14 /* DependencyInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF000DF2027995400E11D14 /* DependencyInstaller.swift */; };
 		FDF000E220279B4600E11D14 /* db_check.sh in Resources */ = {isa = PBXBuildFile; fileRef = FDF000E120279B4600E11D14 /* db_check.sh */; };
 		FDFBFB78202F6A7200E3AE50 /* PlotterHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFBFB77202F6A7200E3AE50 /* PlotterHelper.swift */; };
@@ -156,6 +158,8 @@
 		FDB7EAE22043361A003D6813 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/Mac/SwiftyJSON.framework; sourceTree = "<group>"; };
 		FDB7EAE62043370B003D6813 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		FDB7EAE820434042003D6813 /* creepMiner */ = {isa = PBXFileReference; lastKnownFileType = folder; path = creepMiner; sourceTree = "<group>"; };
+		FDB7EAEA2044E3AE003D6813 /* miner_start.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = miner_start.sh; sourceTree = "<group>"; };
+		FDB7EAEC2044E41F003D6813 /* miner_stop.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = miner_stop.sh; sourceTree = "<group>"; };
 		FDF000DF2027995400E11D14 /* DependencyInstaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInstaller.swift; sourceTree = "<group>"; };
 		FDF000E120279B4600E11D14 /* db_check.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = db_check.sh; sourceTree = "<group>"; };
 		FDFBFB76202C1F6100E3AE50 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -311,6 +315,8 @@
 				FD779EC92030C9F60045C7E2 /* get_plot_status.sh */,
 				FD29904D203A27CD000C3C93 /* is_miner_installed.sh */,
 				FD29904F203A2E83000C3C93 /* install_miner.sh */,
+				FDB7EAEA2044E3AE003D6813 /* miner_start.sh */,
+				FDB7EAEC2044E41F003D6813 /* miner_stop.sh */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -463,6 +469,7 @@
 				FD976D1B20389D92004CCB70 /* LICENSE in Resources */,
 				FD47AAD6202941BF0092BF39 /* is_wallet_installed.sh in Resources */,
 				FD47AAD420292F910092BF39 /* check_latest_wallet.sh in Resources */,
+				FDB7EAEB2044E3AE003D6813 /* miner_start.sh in Resources */,
 				FD299050203A2E83000C3C93 /* install_miner.sh in Resources */,
 				FDFBFB7D202F89ED00E3AE50 /* plotter_install.sh in Resources */,
 				FDAD0F712027767E0013301F /* create_database.sh in Resources */,
@@ -480,6 +487,7 @@
 				FD3A25C8202563B500DB3240 /* Main.storyboard in Resources */,
 				FD47AAD8202945190092BF39 /* wallet_start.sh in Resources */,
 				FD8F3A3F2033F6A8008714F4 /* .travis.yml in Resources */,
+				FDB7EAED2044E41F003D6813 /* miner_stop.sh in Resources */,
 				FDF000E220279B4600E11D14 /* db_check.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

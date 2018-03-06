@@ -19,17 +19,22 @@ class MinerHelper {
     // paths
     var pathInstaller: String = ""
     var pathInstalled: String = ""
+    var pathStart: String = ""
+    var pathStop: String = ""
 
     init() {
         let bundle = Bundle.main
         // set paths
         self.pathInstaller = bundle.path(forResource: "install_miner", ofType: "sh")!
         self.pathInstalled = bundle.path(forResource: "is_miner_installed", ofType: "sh")!
+        self.pathStart = bundle.path(forResource: "miner_start", ofType: "sh")!
+        self.pathStop = bundle.path(forResource: "miner_stop", ofType: "sh")!
     }
 
     func isMinerInstalled() -> Bool {
         if swiftBash.bash(command: "sh", arguments: [self.pathInstalled]) == "1" {
             self.isInstalled = true
+            Logger.log(message: "Miner is Installed", event: .debug)
         }
         return self.isInstalled
     }
@@ -67,13 +72,27 @@ class MinerHelper {
             Logger.log(message: "Could not find mining.conf", event: .error)
         }
     }
-    
+
     func startMining() {
-
+        Logger.log(message: "Starting Miner...", event: .info)
+        DispatchQueue.global(qos: .default).async {
+            print(self.swiftBash.bash(command: "sh", arguments: [self.pathStart]))
+        }
     }
-    
-    func stopMining() {
 
+    func stopMining() {
+        Logger.log(message: "Stopping Miner...", event: .info)
+        DispatchQueue.global(qos: .default).async {
+            _ = self.swiftBash.bash(command: "sh", arguments: [self.pathStop])
+        }
+    }
+
+    static func urlArrayToString(urls: [URL]) -> String {
+        var returnString = ""
+        for url in urls {
+            returnString += "\"" + url.absoluteString + "\","
+        }
+        return returnString
     }
 
 }

@@ -10,7 +10,8 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    var wallet = WalletHelper()
+    let wallet = WalletHelper()
+    let swiftBash = SwiftBasher()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
@@ -29,5 +30,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBAction func openSupport(_ sender: NSMenuItem) {
         if let url = URL(string: "https://github.com/beatsbears/BurstXBundle/wiki"),
             NSWorkspace.shared.open(url) {}
+    }
+
+    @IBAction func goToAppLogs(_ sender: NSMenuItem) {
+        _ = swiftBash.bash(command: "open", arguments: [Logger.logFile.absoluteString])
     }
 }

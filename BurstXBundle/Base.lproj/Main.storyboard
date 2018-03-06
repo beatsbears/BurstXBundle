@@ -131,6 +131,12 @@
                                                 <action selector="openSupport:" target="Voe-Tx-rLC" id="5GV-Fm-3jR"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem title="Burst XBundle Logs" id="FIB-0o-gba">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="goToAppLogs:" target="Voe-Tx-rLC" id="XRN-Mx-mNA"/>
+                                            </connections>
+                                        </menuItem>
                                     </items>
                                 </menu>
                             </menuItem>
@@ -1019,6 +1025,20 @@
                                     <action selector="minerGoToMiningButtonClick:" target="F9f-W0-18u" id="YuX-zM-4tj"/>
                                 </connections>
                             </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9ap-Ty-5Sz">
+                                <rect key="frame" x="110" y="109" width="50" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="TsI-qf-qec"/>
+                                    <constraint firstAttribute="height" constant="20" id="ytY-Ag-4Ct"/>
+                                </constraints>
+                                <buttonCell key="cell" type="inline" title="Files" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="O8t-g4-TqZ">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="smallSystemBold"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="minerPickFilesButtonClick:" target="F9f-W0-18u" id="HEh-ra-fVn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="QrT-75-zPg" firstAttribute="leading" secondItem="FD7-fT-4so" secondAttribute="trailing" constant="10" id="2AY-iT-e0X"/>
@@ -1027,10 +1047,12 @@
                             <constraint firstItem="QrT-75-zPg" firstAttribute="top" secondItem="oKm-sA-Hdm" secondAttribute="top" constant="20" id="50c-Nu-zbh"/>
                             <constraint firstItem="Awz-00-yBT" firstAttribute="top" secondItem="HSY-wo-4hq" secondAttribute="bottom" constant="5" id="5K0-au-APm"/>
                             <constraint firstItem="RCG-vb-JKs" firstAttribute="top" secondItem="dGh-o2-IBF" secondAttribute="bottom" constant="8" id="FEl-5l-Qww"/>
+                            <constraint firstItem="9ap-Ty-5Sz" firstAttribute="leading" secondItem="Awz-00-yBT" secondAttribute="trailing" id="FL4-zm-B3d"/>
                             <constraint firstItem="XLS-6c-AOQ" firstAttribute="leading" secondItem="JZV-oU-FpN" secondAttribute="trailing" constant="5" id="H9b-I2-mPt"/>
                             <constraint firstItem="HSY-wo-4hq" firstAttribute="leading" secondItem="oKm-sA-Hdm" secondAttribute="leading" constant="10" id="Hni-AB-RIL"/>
                             <constraint firstItem="FD7-fT-4so" firstAttribute="top" secondItem="oKm-sA-Hdm" secondAttribute="top" constant="20" id="I77-sA-MAV"/>
                             <constraint firstItem="i7n-WU-zvg" firstAttribute="top" secondItem="JZV-oU-FpN" secondAttribute="bottom" constant="5" id="M60-YG-ErV"/>
+                            <constraint firstItem="9ap-Ty-5Sz" firstAttribute="top" secondItem="ghG-Nf-Ck4" secondAttribute="bottom" constant="5" id="M7I-hh-RXa"/>
                             <constraint firstItem="XLS-6c-AOQ" firstAttribute="top" secondItem="zqJ-GF-IHS" secondAttribute="bottom" constant="5" id="MMe-oZ-EO4"/>
                             <constraint firstItem="ycS-cy-cch" firstAttribute="leading" secondItem="oKm-sA-Hdm" secondAttribute="leading" constant="10" id="NT2-dM-jSz"/>
                             <constraint firstAttribute="trailing" secondItem="RCG-vb-JKs" secondAttribute="trailing" constant="20" id="NUC-7M-PSY"/>
@@ -1061,6 +1083,7 @@
                         <outlet property="minerHelpButton" destination="W2O-J0-b19" id="bFU-Gl-2U2"/>
                         <outlet property="minerMiningInfoLabel" destination="1f0-Es-o5y" id="2M3-K6-vVk"/>
                         <outlet property="minerMiningInfoTextField" destination="zqJ-GF-IHS" id="QqK-VE-tlU"/>
+                        <outlet property="minerPickFilesButton" destination="9ap-Ty-5Sz" id="Mxk-BZ-YqU"/>
                         <outlet property="minerPlotFilesLabel" destination="Awz-00-yBT" id="Sy1-H0-Rc3"/>
                         <outlet property="minerPlotFilesTextView" destination="47I-Co-VLH" id="h6X-1N-wWV"/>
                         <outlet property="minerStartMiningButton" destination="dGh-o2-IBF" id="GND-Kc-Lwz"/>

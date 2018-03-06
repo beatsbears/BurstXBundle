@@ -16,6 +16,8 @@ enum LogEvent: String {
 
 class Logger {
 
+    static var logDir: URL = FileManager.default.urls(for: FileManager.SearchPathDirectory.cachesDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).first!
+    static var logFile: URL = logDir.appendingPathComponent("burstxbundle.log")
     static var dateFormat = "yyyy-MM-dd hh:mm:ssSSS"
     static var dateFormatter: DateFormatter {
         let formatter = DateFormatter()

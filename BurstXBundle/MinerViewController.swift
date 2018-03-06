@@ -35,6 +35,7 @@ class MinerViewController: NSViewController {
     @IBOutlet weak var minerHelpButton: NSButton!
     @IBOutlet weak var minerStartMiningButton: NSButton!
     @IBOutlet weak var minerGoToMiningButton: NSButton!
+    @IBOutlet weak var minerPickFilesButton: NSButton!
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     override func viewDidLoad() {
@@ -56,7 +57,18 @@ class MinerViewController: NSViewController {
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Actions
     @IBAction func minerStartMiningButtonClick(_ sender: NSButton) {
-        miner.configureMiner(config: MinerRequest(miningInfo: "", submission: "", wallet: "", targetDeadline: "", plotFiles: [""]))
+        if self.minerStartMiningButton.title == "Start Mining" {
+        miner.configureMiner(config: MinerRequest(miningInfo: self.minerMiningInfoTextField.stringValue,
+                                                  submission: self.minerSubmissionTextField.stringValue,
+                                                  wallet: self.minerWalletTextField.stringValue,
+                                                  targetDeadline: self.minerTargetDeadlineTextField.stringValue,
+                                                  plotFiles: ["/Volumes/SD/plots/12953097211892854730_0_4096_4096"]))
+        miner.startMining()
+        self.minerRunning()
+        } else {
+            miner.stopMining()
+            self.minerReady()
+        }
     }
 
     @IBAction func minerHelpButtonClick(_ sender: NSButton) {
@@ -65,6 +77,24 @@ class MinerViewController: NSViewController {
 
     @IBAction func minerGoToMiningButtonClick(_ sender: NSButton) {
         if let url = URL(string: "http://localhost:8080"), NSWorkspace.shared.open(url) {}
+    }
+
+    @IBAction func minerPickFilesButtonClick(_ sender: NSButton) {
+        var plotPaths: [URL] = [URL(string: "file:///Volumes")!]
+        let openPanel = NSOpenPanel()
+        _ =  FileManager.default.urls(for: .userDirectory, in: .userDomainMask).first
+        openPanel.allowsMultipleSelection = true
+        openPanel.canChooseDirectories = false
+        openPanel.canCreateDirectories = false
+        openPanel.canChooseFiles = true
+        openPanel.begin { (result) -> Void in
+            if result.rawValue == NSFileHandlingPanelOKButton {
+
+                plotPaths = openPanel.urls
+                self.minerPlotFilesTextView.string = MinerHelper.urlArrayToString(urls: plotPaths)
+                Logger.log(message: "New plot file(s) selected: " + self.minerPlotFilesTextView.string, event: .info)
+            }
+        }
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
