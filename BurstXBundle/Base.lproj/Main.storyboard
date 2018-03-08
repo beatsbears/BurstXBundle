@@ -338,11 +338,27 @@
                                     <action selector="walletDetailsButtonClick:" target="6ai-H1-91a" id="1cb-Ox-GZZ"/>
                                 </connections>
                             </button>
+                            <button horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FsK-XC-qfe">
+                                <rect key="frame" x="18" y="34" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="21" id="9mF-L5-YMN"/>
+                                    <constraint firstAttribute="height" constant="21" id="vhE-SL-Vwf"/>
+                                </constraints>
+                                <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="T3P-NI-ADU">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="walletHelpButtonClick:" target="6ai-H1-91a" id="laT-wz-hW5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="Yy0-Uo-aaL" firstAttribute="top" secondItem="YeR-qR-V0X" secondAttribute="bottom" constant="50" id="0sv-hZ-02y"/>
                             <constraint firstItem="YeR-qR-V0X" firstAttribute="leading" secondItem="U2E-c5-O8E" secondAttribute="trailing" constant="10" id="91V-NH-eHF"/>
+                            <constraint firstItem="S1W-wX-7xr" firstAttribute="top" secondItem="FsK-XC-qfe" secondAttribute="bottom" constant="17" id="Csu-tJ-vTx"/>
                             <constraint firstAttribute="trailing" secondItem="sAg-wu-20l" secondAttribute="trailing" constant="20" id="Dz1-0Y-vr3"/>
+                            <constraint firstItem="FsK-XC-qfe" firstAttribute="leading" secondItem="7oo-h2-1zs" secondAttribute="leading" constant="20" id="FZ8-dk-dbI"/>
                             <constraint firstItem="sCS-3e-GMe" firstAttribute="leading" secondItem="AfF-ik-Tma" secondAttribute="trailing" constant="10" id="GWe-Jj-KLg"/>
                             <constraint firstItem="S1W-wX-7xr" firstAttribute="leading" secondItem="7oo-h2-1zs" secondAttribute="leading" constant="20" id="HZt-3q-ZLt"/>
                             <constraint firstItem="AfF-ik-Tma" firstAttribute="leading" secondItem="7oo-h2-1zs" secondAttribute="leading" constant="20" id="HyJ-4X-QTF"/>
@@ -369,6 +385,7 @@
                         <outlet property="walletDebugOutput" destination="S1W-wX-7xr" id="iMw-SY-kYa"/>
                         <outlet property="walletDetailsButton" destination="TDI-9q-gfn" id="Ak3-D6-jeg"/>
                         <outlet property="walletGoToButton" destination="D4S-TE-wlD" id="6cg-Rg-d62"/>
+                        <outlet property="walletHelpButton" destination="FsK-XC-qfe" id="Xi6-fq-pxm"/>
                         <outlet property="walletProgressMeter" destination="PVt-vM-gYN" id="m22-KT-vOP"/>
                         <outlet property="walletStatusIndicatorLabel" destination="YeR-qR-V0X" id="wOQ-bx-bmQ"/>
                         <outlet property="walletStatusLabel" destination="CH3-41-x4s" id="Xwp-2Z-8AN"/>

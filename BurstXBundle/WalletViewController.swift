@@ -30,7 +30,8 @@ class WalletViewController: NSViewController {
     @IBOutlet weak var walletDetailsButton: NSButton!
     @IBOutlet weak var walletProgressMeter: NSProgressIndicator!
     @IBOutlet weak var walletDebugOutput: NSTextField!
-
+    @IBOutlet weak var walletHelpButton: NSButton!
+    
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +69,10 @@ class WalletViewController: NSViewController {
         // Opens POC Wallet github
         Logger.log(message: "Open Wallet Github.", event: .debug)
         openGithub()
+    }
+
+    @IBAction func walletHelpButtonClick(_ sender: NSButton) {
+        if let url = URL(string: "https://github.com/beatsbears/BurstXBundle/wiki/Wallet"), NSWorkspace.shared.open(url) {}
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
