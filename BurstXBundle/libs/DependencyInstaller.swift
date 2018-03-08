@@ -90,7 +90,7 @@ class DependencyInstaller {
                 self.isWalletInstalled = wallet.installWallet()
                 tmp_missing.removeValue(forKey: "wallet")
             }
-            util.delay(count: 5, closure: {})
+            util.delay(count: 10, closure: {})
         }
     }
 }

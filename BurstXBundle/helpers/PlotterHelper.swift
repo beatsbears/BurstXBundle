@@ -163,11 +163,8 @@ class PlotterHelper {
             if rawLogLine.contains("\n") {
                 stripperLogLine = rawLogLine.components(separatedBy: CharacterSet.newlines).last!
             }
-            if stripperLogLine.range(of: "Resizing") != nil {
-                // Don't log the huge resizing messages
-                Logger.log(message: "Raw plotter status: " + stripperLogLine, event: .debug)
-            }
             if stripperLogLine.range(of: "Percent done") != nil {
+                Logger.log(message: "Raw plotter status: " + stripperLogLine, event: .debug)
                 let endIndex = stripperLogLine.range(of: "%")!.lowerBound
                 pct = String(stripperLogLine[..<endIndex]).trimmingCharacters(in: .whitespacesAndNewlines)
                 status = "Plotting"
@@ -175,6 +172,7 @@ class PlotterHelper {
                     speed = String(stripperLogLine[match])
                 }
             } else if stripperLogLine.range(of: "Finished") != nil {
+                Logger.log(message: "Raw plotter status: " + stripperLogLine, event: .debug)
                 status = "Finished"
                 pct = "100"
             }

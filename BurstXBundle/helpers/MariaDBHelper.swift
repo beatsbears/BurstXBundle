@@ -36,14 +36,16 @@ class MariaDBHelper {
         self.pathCheckDBScript = bundle.path(forResource: "is_maria_db_password_default", ofType: "sh")!
     }
 
-    func isMariaDBInstalled() -> Bool {
+    func isMariaDBInstalled(print: Bool = true) -> Bool {
         // Return whether or not mariaDB appears to be installed
         if swiftBash.bash(command: "sh", arguments: [self.pathIsInstalledScript]) == "1" {
             self.isInstalled = true
             Logger.log(message: "MariaDB appears to be install.", event: .info)
         } else {
             self.isInstalled = false
-            Logger.log(message: "MariaDB does not appear to be install.", event: .warn)
+            if print {
+                Logger.log(message: "MariaDB does not appear to be install.", event: .warn)
+            }
         }
         return self.isInstalled
     }
@@ -58,10 +60,11 @@ class MariaDBHelper {
     func waitForMariaDBInstallation() {
         var installed = false
         while installed == false {
-            util.delay(count: 3, closure: {
+            util.delay(count: 10, closure: {
                 Logger.log(message: "Checking if MariaDB install has completed...", event: .debug)
             })
-            installed = self.isMariaDBInstalled()
+            installed = self.isMariaDBInstalled(print: false)
+            util.delay(count: 100, closure: {})
         }
         util.delay(count: 10, closure: { _ = self.createMariaDBDatabase() })
     }

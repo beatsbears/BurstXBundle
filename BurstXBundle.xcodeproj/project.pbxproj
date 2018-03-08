@@ -196,9 +196,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FD0FB180204F25AB002FE738 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				FD0FB181204F25C5002FE738 /* Images */,
+			);
+			path = Documentation;
+			sourceTree = "<group>";
+		};
+		FD0FB181204F25C5002FE738 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		FD3A25B4202563B500DB3240 = {
 			isa = PBXGroup;
 			children = (
+				FD0FB180204F25AB002FE738 /* Documentation */,
 				FDB7EAE62043370B003D6813 /* .swiftlint.yml */,
 				FDB7EAE22043361A003D6813 /* SwiftyJSON.framework */,
 				FD56A3A12043347500520574 /* Cartfile */,
