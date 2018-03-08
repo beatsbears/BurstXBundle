@@ -16,8 +16,9 @@ enum LogEvent: String {
 
 class Logger {
 
-    static var logDir: URL = FileManager.default.urls(for: FileManager.SearchPathDirectory.cachesDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).first!
-    static var logFile: URL = logDir.appendingPathComponent("burstxbundle.log")
+    static var logBaseDir: URL = FileManager.default.urls(for: FileManager.SearchPathDirectory.cachesDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).first!
+    static var logsPath = logBaseDir.appendingPathComponent("BurstXBundle")
+    static var logFile: URL = logsPath.appendingPathComponent("burstxbundle.log")
     static var dateFormat = "yyyy-MM-dd hh:mm:ssSSS"
     static var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
@@ -25,6 +26,14 @@ class Logger {
         formatter.locale = Locale.current
         formatter.timeZone = TimeZone.current
         return formatter
+    }
+    
+    init() {
+        do {
+            try FileManager.default.createDirectory(atPath: Logger.logsPath.path, withIntermediateDirectories: true, attributes: nil)
+        } catch let error as NSError {
+            NSLog("Unable to create directory \(error.debugDescription)")
+        }
     }
 
     class func log(message: String,
@@ -47,8 +56,8 @@ class Logger {
     }
 
     class func writeToLog(message: String) {
-        let dir = FileManager.default.urls(for: FileManager.SearchPathDirectory.cachesDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).first!
-        let fileurl =  dir.appendingPathComponent("burstxbundle.log")
+//        let dir = FileManager.default.urls(for: FileManager.SearchPathDirectory.cachesDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).first!
+        let fileurl =  Logger.logFile
         let logFormatMessage = message + "\n"
         let data = logFormatMessage.data(using: .utf8, allowLossyConversion: false)!
 

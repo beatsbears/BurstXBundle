@@ -14,7 +14,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let swiftBash = SwiftBasher()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+        // Init logger Singleton
+        _ = Logger()
         Logger.log(message: "Burst XBundle launched successfully", event: .info)
         if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"]  as? String {
             Logger.log(message: "Version: " + version, event: .info)
