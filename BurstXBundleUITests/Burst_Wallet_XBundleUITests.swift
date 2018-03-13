@@ -3,7 +3,6 @@
 //  Burst Wallet XBundleUITests
 //
 //  Created by Andrew Scott on 2/2/18.
-//  Copyright © 2018 Drowned Coast. All rights reserved.
 //
 
 import XCTest

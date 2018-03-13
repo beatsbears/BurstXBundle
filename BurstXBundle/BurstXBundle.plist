@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>maria_db_root_password</key>
+	<string></string>
+	<key>maria_db_wallet_db</key>
+	<string>burstwallet_xb</string>
+	<key>account_id_friendly</key>
+	<string></string>
+	<key>account_id_num</key>
+	<string></string>
+	<key>maria_db_wallet_password</key>
+	<string>MyV3ryL0ngBurstP@ssword1!</string>
+	<key>maria_db_wallet_user</key>
+	<string>burst_user_xb</string>
+</dict>
+</plist>

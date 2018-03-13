@@ -12,11 +12,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     let wallet = WalletHelper()
     let swiftBash = SwiftBasher()
+    let config = Config()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Init logger Singleton
         _ = Logger()
         Logger.log(message: "Burst XBundle launched successfully", event: .info)
+        Logger.log(message: "Work directory: " + swiftBash.bash(command: "pwd", arguments: []), event: .info)
         if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"]  as? String {
             Logger.log(message: "Version: " + version, event: .info)
         }

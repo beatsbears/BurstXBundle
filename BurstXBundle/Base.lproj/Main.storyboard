@@ -197,6 +197,7 @@
                         <tabViewItem label="Wallet" identifier="Wallet" image="Wallet" id="C2o-T8-tZT"/>
                         <tabViewItem label="Plotter" identifier="Plotter" image="Plotting" id="hOJ-QE-0CM"/>
                         <tabViewItem label="Miner" identifier="Miner" image="Mining" id="iID-VI-6jm"/>
+                        <tabViewItem label="Settings" identifier="Settings" image="Settings" id="fdX-jT-WCe"/>
                     </tabViewItems>
                     <tabView key="tabView" type="noTabsNoBorder" id="XfE-o3-Z7T">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
@@ -212,6 +213,7 @@
                         <segue destination="6ai-H1-91a" kind="relationship" relationship="tabItems" id="K7e-hp-zY2"/>
                         <segue destination="kA1-QQ-YkE" kind="relationship" relationship="tabItems" id="uqj-2h-vRP"/>
                         <segue destination="F9f-W0-18u" kind="relationship" relationship="tabItems" id="LiW-5E-9iR"/>
+                        <segue destination="Dxy-MV-ltp" kind="relationship" relationship="tabItems" id="v1o-NM-ECz"/>
                     </connections>
                 </tabViewController>
                 <customObject id="rL9-gF-zay" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -491,10 +493,10 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cEB-tg-Ki4">
-                                <rect key="frame" x="115" y="221" width="120" height="20"/>
+                                <rect key="frame" x="115" y="221" width="150" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="GYX-yS-wlR"/>
-                                    <constraint firstAttribute="width" constant="120" id="YOS-Ag-Ajt"/>
+                                    <constraint firstAttribute="width" constant="150" id="YOS-Ag-Ajt"/>
                                 </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="1yL-8R-dhm">
                                     <font key="font" metaFont="cellTitle"/>
@@ -515,9 +517,9 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0IJ-2c-Tdz">
-                                <rect key="frame" x="115" y="196" width="120" height="20"/>
+                                <rect key="frame" x="115" y="196" width="150" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="UAC-OF-Rr5"/>
+                                    <constraint firstAttribute="width" constant="150" id="UAC-OF-Rr5"/>
                                     <constraint firstAttribute="height" constant="20" id="YFI-28-ohO"/>
                                 </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" placeholderString="0" drawsBackground="YES" id="z6i-AF-7Df">
@@ -1118,11 +1120,269 @@
             </objects>
             <point key="canvasLocation" x="1108" y="1713"/>
         </scene>
+        <!--Settings-->
+        <scene sceneID="JDo-jA-8tw">
+            <objects>
+                <viewController title="Settings" storyboardIdentifier="SettingsViewController" id="Dxy-MV-ltp" customClass="SettingsViewController" customModule="BurstXBundle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="ZiL-va-xRP">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yU7-ia-ehV">
+                                <rect key="frame" x="18" y="260" width="204" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="ZZr-UF-rgr"/>
+                                    <constraint firstAttribute="height" constant="20" id="gfn-fI-bz7"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Burst XBundle Settings" id="eNU-Pc-N0o">
+                                    <font key="font" metaFont="systemHeavy" size="14"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oIK-og-Eig">
+                                <rect key="frame" x="18" y="232" width="164" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="4VL-gk-GX9"/>
+                                    <constraint firstAttribute="width" constant="160" id="8wR-Y1-AVH"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Wallet ID" id="ub7-zr-ETm">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="y7a-VO-am8">
+                                <rect key="frame" x="185" y="232" width="225" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="Nqa-t9-cyg"/>
+                                    <constraint firstAttribute="width" constant="225" id="aXe-eO-kAC"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="BURST-____-____-____-_____" drawsBackground="YES" id="pof-4Y-D8s">
+                                    <font key="font" metaFont="cellTitle"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <action selector="settingsWalletIdTextFieldEdit:" target="Dxy-MV-ltp" id="p2o-17-peU"/>
+                                </connections>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FWE-ny-3Sb">
+                                <rect key="frame" x="18" y="204" width="164" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="JLr-qg-VNa"/>
+                                    <constraint firstAttribute="width" constant="160" id="iLJ-q4-cSl"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Numeric Wallet ID" id="Id2-BK-Nv4">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1eb-dk-LgJ">
+                                <rect key="frame" x="185" y="205" width="225" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="CXK-P9-sw0"/>
+                                    <constraint firstAttribute="width" constant="225" id="Vlr-Pp-tMR"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="1111222233334444555" drawsBackground="YES" id="RAn-F5-ETX">
+                                    <font key="font" metaFont="cellTitle"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Jg6-FE-00h">
+                                <rect key="frame" x="18" y="128" width="164" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="CTU-Pt-ngc"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="krY-P5-BLB"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Wallet Database" id="0LB-kE-VMy">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MYf-ra-jhg">
+                                <rect key="frame" x="185" y="130" width="225" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="225" id="KzU-cu-aAB"/>
+                                    <constraint firstAttribute="height" constant="20" id="tKy-Fr-sV6"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" enabled="NO" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="burstwallet_xb" drawsBackground="YES" id="YUW-xh-Dcr">
+                                    <font key="font" metaFont="cellTitle"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Df6-0D-7Kg">
+                                <rect key="frame" x="18" y="100" width="164" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="CuC-iH-i9f"/>
+                                    <constraint firstAttribute="height" constant="20" id="j0m-5I-kJG"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Wallet Database User" id="iyQ-BZ-ngV">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p9u-Dc-y8q">
+                                <rect key="frame" x="185" y="102" width="225" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="225" id="bDh-7d-ZB6"/>
+                                    <constraint firstAttribute="height" constant="20" id="yJu-50-5Ec"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" enabled="NO" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="burst_user_xb" drawsBackground="YES" id="Mfd-iT-YPV">
+                                    <font key="font" metaFont="cellTitle"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OA7-Bp-Moo">
+                                <rect key="frame" x="18" y="72" width="164" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="R12-Je-3Fd"/>
+                                    <constraint firstAttribute="height" constant="20" id="YLO-oD-Muu"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Wallet Database Password" id="Csl-xt-DFF">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RPp-oR-KNe">
+                                <rect key="frame" x="185" y="74" width="225" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="uVZ-Ev-wjg"/>
+                                    <constraint firstAttribute="width" constant="225" id="ve9-uC-I5P"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" enabled="NO" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="*****************" drawsBackground="YES" id="Znf-Sh-44P">
+                                    <font key="font" metaFont="cellTitle"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GMK-F5-M2V">
+                                <rect key="frame" x="18" y="44" width="164" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="CIM-sj-zuc"/>
+                                    <constraint firstAttribute="width" constant="160" id="eC1-RH-bcI"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Root MariaDB Password" id="60w-IG-gnh">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZOX-D8-kcD">
+                                <rect key="frame" x="185" y="46" width="225" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="JfB-N2-zjS"/>
+                                    <constraint firstAttribute="width" constant="225" id="NoU-jy-KMh"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="JfQ-00-cfW">
+                                    <font key="font" metaFont="cellTitle"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yd0-e0-XD9">
+                                <rect key="frame" x="407" y="257" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="NXF-wE-9BC">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="settingsHelpButtonClick:" target="Dxy-MV-ltp" id="Xzx-CD-1WZ"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3iH-kj-PG5">
+                                <rect key="frame" x="380" y="7" width="50" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Axg-bt-WVD"/>
+                                    <constraint firstAttribute="height" constant="20" id="Ypk-2w-Cgu"/>
+                                </constraints>
+                                <buttonCell key="cell" type="inline" title="Save" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="yAu-ny-a1J">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="smallSystemBold"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="settingsSaveButtonClick:" target="Dxy-MV-ltp" id="HvK-VP-HRV"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="S2r-pt-x9J">
+                                <rect key="frame" x="18" y="158" width="204" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Iai-I0-AgO"/>
+                                    <constraint firstAttribute="height" constant="20" id="d10-da-moY"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Advanced Settings" id="jOV-dw-laA">
+                                    <font key="font" metaFont="systemHeavy" size="14"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="3iH-kj-PG5" secondAttribute="bottom" constant="8" id="0jg-LQ-3uV"/>
+                            <constraint firstItem="p9u-Dc-y8q" firstAttribute="leading" secondItem="Df6-0D-7Kg" secondAttribute="trailing" constant="5" id="2VG-B2-WOs"/>
+                            <constraint firstItem="ZOX-D8-kcD" firstAttribute="leading" secondItem="GMK-F5-M2V" secondAttribute="trailing" constant="5" id="5cg-zt-8EL"/>
+                            <constraint firstItem="OA7-Bp-Moo" firstAttribute="leading" secondItem="ZiL-va-xRP" secondAttribute="leading" constant="20" id="6CX-1A-geM"/>
+                            <constraint firstItem="FWE-ny-3Sb" firstAttribute="top" secondItem="oIK-og-Eig" secondAttribute="bottom" constant="8" id="Fmf-LA-qDh"/>
+                            <constraint firstItem="RPp-oR-KNe" firstAttribute="leading" secondItem="OA7-Bp-Moo" secondAttribute="trailing" constant="5" id="GLa-yd-lbm"/>
+                            <constraint firstItem="1eb-dk-LgJ" firstAttribute="leading" secondItem="FWE-ny-3Sb" secondAttribute="trailing" constant="5" id="HgM-fx-bcj"/>
+                            <constraint firstItem="1eb-dk-LgJ" firstAttribute="top" secondItem="y7a-VO-am8" secondAttribute="bottom" constant="7" id="TwO-Y0-2q1"/>
+                            <constraint firstItem="GMK-F5-M2V" firstAttribute="leading" secondItem="ZiL-va-xRP" secondAttribute="leading" constant="20" id="ewY-53-cbj"/>
+                            <constraint firstItem="y7a-VO-am8" firstAttribute="leading" secondItem="oIK-og-Eig" secondAttribute="trailing" constant="5" id="fD8-XF-IBF"/>
+                            <constraint firstItem="Jg6-FE-00h" firstAttribute="top" secondItem="S2r-pt-x9J" secondAttribute="bottom" constant="10" id="fTQ-6q-lRr"/>
+                            <constraint firstItem="oIK-og-Eig" firstAttribute="top" secondItem="yU7-ia-ehV" secondAttribute="bottom" constant="8" id="h9m-yL-FlN"/>
+                            <constraint firstItem="yU7-ia-ehV" firstAttribute="top" secondItem="ZiL-va-xRP" secondAttribute="top" constant="20" id="h9w-QZ-Dk5"/>
+                            <constraint firstItem="FWE-ny-3Sb" firstAttribute="leading" secondItem="ZiL-va-xRP" secondAttribute="leading" constant="20" id="htH-AH-wmZ"/>
+                            <constraint firstItem="Df6-0D-7Kg" firstAttribute="top" secondItem="Jg6-FE-00h" secondAttribute="bottom" constant="8" id="hx8-Ao-tuh"/>
+                            <constraint firstItem="Df6-0D-7Kg" firstAttribute="leading" secondItem="ZiL-va-xRP" secondAttribute="leading" constant="20" id="kGo-9V-udS"/>
+                            <constraint firstItem="yU7-ia-ehV" firstAttribute="leading" secondItem="ZiL-va-xRP" secondAttribute="leading" constant="20" id="lTp-y4-Q6W"/>
+                            <constraint firstItem="y7a-VO-am8" firstAttribute="top" secondItem="yU7-ia-ehV" secondAttribute="bottom" constant="8" id="lgU-xM-Z3v"/>
+                            <constraint firstItem="Jg6-FE-00h" firstAttribute="leading" secondItem="ZiL-va-xRP" secondAttribute="leading" constant="20" id="lhW-SF-5oA"/>
+                            <constraint firstItem="OA7-Bp-Moo" firstAttribute="top" secondItem="Df6-0D-7Kg" secondAttribute="bottom" constant="8" id="o39-hg-emP"/>
+                            <constraint firstItem="oIK-og-Eig" firstAttribute="leading" secondItem="ZiL-va-xRP" secondAttribute="leading" constant="20" id="oIT-Y6-OpO"/>
+                            <constraint firstItem="S2r-pt-x9J" firstAttribute="leading" secondItem="ZiL-va-xRP" secondAttribute="leading" constant="20" id="rDO-NA-SyK"/>
+                            <constraint firstAttribute="trailing" secondItem="3iH-kj-PG5" secondAttribute="trailing" constant="20" id="rH8-fo-XXC"/>
+                            <constraint firstItem="MYf-ra-jhg" firstAttribute="leading" secondItem="Jg6-FE-00h" secondAttribute="trailing" constant="5" id="ube-5l-p4g"/>
+                            <constraint firstItem="S2r-pt-x9J" firstAttribute="top" secondItem="FWE-ny-3Sb" secondAttribute="bottom" constant="26" id="wCR-rw-7Mj"/>
+                            <constraint firstItem="GMK-F5-M2V" firstAttribute="top" secondItem="OA7-Bp-Moo" secondAttribute="bottom" constant="8" id="zV5-QP-fWX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="settingsAdvancedLabel" destination="S2r-pt-x9J" id="mlR-63-cdc"/>
+                        <outlet property="settingsHelpButton" destination="yd0-e0-XD9" id="dMj-nM-OD6"/>
+                        <outlet property="settingsMainLabel" destination="yU7-ia-ehV" id="RrM-JQ-o9H"/>
+                        <outlet property="settingsMariaDBPasswordLabel" destination="GMK-F5-M2V" id="Um0-An-68h"/>
+                        <outlet property="settingsMariaDBPasswordTextField" destination="ZOX-D8-kcD" id="hit-5T-GTE"/>
+                        <outlet property="settingsNumericWalletIdLabel" destination="FWE-ny-3Sb" id="Xak-WT-3R8"/>
+                        <outlet property="settingsNumericWalletIdTextField" destination="1eb-dk-LgJ" id="TSH-IH-fwW"/>
+                        <outlet property="settingsSaveButton" destination="3iH-kj-PG5" id="Vdc-ap-EpI"/>
+                        <outlet property="settingsWalletDBLabel" destination="Jg6-FE-00h" id="eqB-Re-dHL"/>
+                        <outlet property="settingsWalletDBPasswordLabel" destination="OA7-Bp-Moo" id="FVk-IM-NPq"/>
+                        <outlet property="settingsWalletDBPasswordTextField" destination="RPp-oR-KNe" id="Wdk-T5-nVk"/>
+                        <outlet property="settingsWalletDBTextField" destination="MYf-ra-jhg" id="UFD-fM-B64"/>
+                        <outlet property="settingsWalletDBUserLabel" destination="Df6-0D-7Kg" id="wJd-6d-3Xc"/>
+                        <outlet property="settingsWalletDBUserTextField" destination="p9u-Dc-y8q" id="tBx-HA-IUO"/>
+                        <outlet property="settingsWalletIDLabel" destination="oIK-og-Eig" id="4vg-RJ-Ht9"/>
+                        <outlet property="settingsWalletIdTextField" destination="y7a-VO-am8" id="FPE-IJ-q3b"/>
+                    </connections>
+                </viewController>
+                <customObject id="YNw-x1-ueZ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1127" y="565"/>
+        </scene>
     </scenes>
     <resources>
         <image name="BurstLogo" width="128" height="128"/>
         <image name="Mining" width="128" height="128"/>
         <image name="Plotting" width="128" height="128"/>
+        <image name="Settings" width="85" height="85"/>
         <image name="Wallet" width="128" height="128"/>
     </resources>
 </document>

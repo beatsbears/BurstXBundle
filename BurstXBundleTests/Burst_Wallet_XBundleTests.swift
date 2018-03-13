@@ -3,11 +3,10 @@
 //  Burst Wallet XBundleTests
 //
 //  Created by Andrew Scott on 2/2/18.
-//  Copyright © 2018 Drowned Coast. All rights reserved.
 //
 
 import XCTest
-@testable import Burst_Wallet_XBundle
+@testable import BurstXBundle
 
 class Burst_Wallet_XBundleTests: XCTestCase { // swiftlint:disable:this type_name
 

@@ -4,7 +4,6 @@
 //
 //  Created by Andrew Scott on 2/5/18.
 //  https://github.com/k06a/mjminer
-//  https://github.com/DylanHenderson/Burst-Plot-Integrity-Checker
 
 import Cocoa
 
@@ -14,6 +13,7 @@ class PlotterViewController: NSViewController {
     // Libs
     let util = Util()
     let plotter = PlotterHelper()
+    let config = Config()
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Local vars
@@ -70,6 +70,15 @@ class PlotterViewController: NSViewController {
         }
         self.cpuMode = self.plotter.maxCompileOption
 
+        if !self.plotter.isPlotterInstalled() {
+            if self.plotter.maxCompileOption == 2 {
+                self.plotter.installPlotter(cpuMode: 1)
+            } else {
+                self.plotter.installPlotter(cpuMode: 0)
+            }
+        }
+
+        self.plotterWalletIDTextField.stringValue = config.read(key: "account_id_num")
         self.fileLocationPath = self.fileLocation.path
         self.plotterMemUsageTextField.stringValue = String(self.plotter.maxMemory) + " GB"
         self.plotterMemUsageStepper.integerValue = Int(self.plotter.maxMemory)
@@ -118,8 +127,7 @@ class PlotterViewController: NSViewController {
                                          threads: self.plotterThreadCountTextField.stringValue,
                                          coreMode: self.plotter.maxCompileOption)
         Logger.log(message: "Start plotting request sent.", event: .info)
-        self.plotter.plotFile(request: plotRequest)
-        self.startPlotting()
+        showStartAlert(plotRequest: plotRequest)
     }
 
     @IBAction func plotterCPUModeRadioClick(_ sender: NSButton) {
@@ -188,7 +196,7 @@ class PlotterViewController: NSViewController {
 
         self.plotterStartPlottingButton.isEnabled = false
 
-        self.timer = Timer.scheduledTimer(timeInterval: 10.0, target: self, selector: #selector(PlotterViewController.checkStatus), userInfo: nil, repeats: true)
+        self.timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(PlotterViewController.checkStatus), userInfo: nil, repeats: true)
     }
 
     func stopPlotting() {
@@ -215,6 +223,26 @@ class PlotterViewController: NSViewController {
                 self.plotterProgressPercentLabel.stringValue = plotStats["pct"]! + "%"
                 self.plotterProgressBar.doubleValue = Double(plotStats["pct"]!)!
                 self.stopPlotting()
+            }
+        }
+    }
+
+    func showStartAlert(plotRequest: PlotterRequest) {
+        let alert = NSAlert()
+        alert.messageText = "Are you sure?"
+        alert.addButton(withTitle: "OK")
+        alert.addButton(withTitle: "Cancel")
+        alert.informativeText = "Are you sure you want to start plotting using these settings? \n\nWallet ID: \(plotRequest.address) \nFile Path: \(plotRequest.path) \nStarting Nonce: \(plotRequest.startingNonce) \nTotal Plot Size: \(plotRequest.nonces) \nStagger Size: \(plotRequest.staggerSize) \nThreads: \(plotRequest.threads) \nCore Mode: \(plotRequest.coreMode)"
+        alert.beginSheetModal(for: self.view.window!) { (resp: NSApplication.ModalResponse) -> Void in
+            switch resp.rawValue {
+            case 1000:
+                Logger.log(message: "Confirm Start plotting", event: .debug)
+                self.plotter.plotFile(request: plotRequest)
+                self.startPlotting()
+            case 1001:
+                Logger.log(message: "Cancel Start plotting", event: .debug)
+            default:
+                Logger.log(message: "Unknown event", event: .warn)
             }
         }
     }

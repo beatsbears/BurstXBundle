@@ -5,3 +5,5 @@
 
 DIR=$(pwd)
 osascript -e "do shell script \"$DIR/tmp_plot_command.sh\" with administrator privileges"
+LS_FILES=$(ls -la)
+echo "$LS_FILES"

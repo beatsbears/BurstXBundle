@@ -134,8 +134,8 @@ class WalletViewController: NSViewController {
         alert.messageText = "Missing Dependencies"
         alert.addButton(withTitle: "OK")
         alert.informativeText =
-            "Please confirm installation of missing dependencies: "
-            + Array(missing.keys).joined(separator: "\n ")
+            "Please confirm installation of missing dependencies: \n\n"
+            + Array(missing.keys).joined(separator: "\n")
         alert.beginSheetModal(for: self.view.window!) { (_: NSApplication.ModalResponse) -> Void in
             self.finishInstaller(missing: missing)
         }
@@ -145,7 +145,6 @@ class WalletViewController: NSViewController {
         let alert = NSAlert()
         alert.messageText = "Install Successful"
         alert.addButton(withTitle: "OK")
-        alert.showsHelp = true
         alert.informativeText = "Dependencies Install successfully!"
         alert.beginSheetModal(for: self.view.window!) { (_: NSApplication.ModalResponse) -> Void in
             self.walletProgressMeter.isHidden = true

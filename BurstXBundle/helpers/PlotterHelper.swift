@@ -3,7 +3,6 @@
 //  BurstXBundle
 //
 //  Created by Andrew Scott on 2/10/18.
-//  Copyright © 2018 Drowned Coast. All rights reserved.
 //
 
 import Foundation
@@ -44,6 +43,7 @@ class PlotterHelper {
         let bundle = Bundle.main
         // set paths
         self.pathInstaller = bundle.path(forResource: "plotter_install", ofType: "sh")!
+//        self.pathInstaller = bundle.path(forResource: "wrapper_install_plotter", ofType: "sh")!
         self.pathInstalled = bundle.path(forResource: "is_plotter_installed", ofType: "sh")!
         self.pathCPUFeatures = bundle.path(forResource: "cpu_features", ofType: "sh")!
         self.pathMemorySize = bundle.path(forResource: "system_memory", ofType: "sh")!
@@ -68,6 +68,7 @@ class PlotterHelper {
     }
 
     func isPlotterInstalled() -> Bool {
+        Logger.log(message: "Checking if plotter is installed", event: .debug)
         if swiftBash.bash(command: "sh", arguments: [self.pathInstalled]) == "1" {
             self.isInstalled = true
         }
@@ -145,7 +146,8 @@ class PlotterHelper {
                                                                request.threads,
                                                                String(request.coreMode),
                                                                plotTime])
-            print(self.swiftBash.bash(command: "sh", arguments: [self.pathRunPlotCommand]))
+            
+            Logger.log(message: self.swiftBash.bash(command: "sh", arguments: [self.pathRunPlotCommand]), event: .info)
         }
 
         self.currentPlottingLog = plotTime + ".log"
