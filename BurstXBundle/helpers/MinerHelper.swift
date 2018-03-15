@@ -16,7 +16,6 @@ class MinerHelper {
     var isInstalled: Bool = false
 
     // paths
-    var pathInstaller: String = ""
     var pathInstalled: String = ""
     var pathStart: String = ""
     var pathStop: String = ""
@@ -24,7 +23,6 @@ class MinerHelper {
     init() {
         let bundle = Bundle.main
         // set paths
-        self.pathInstaller = bundle.path(forResource: "install_miner", ofType: "sh")!
         self.pathInstalled = bundle.path(forResource: "is_miner_installed", ofType: "sh")!
         self.pathStart = bundle.path(forResource: "miner_start", ofType: "sh")!
         self.pathStop = bundle.path(forResource: "miner_stop", ofType: "sh")!
@@ -34,18 +32,10 @@ class MinerHelper {
         if swiftBash.bash(command: "sh", arguments: [self.pathInstalled]) == "1" {
             self.isInstalled = true
             Logger.log(message: "Miner is Installed", event: .debug)
+        } else {
+            Logger.log(message: "Miner not found: " + swiftBash.bash(command: "sh", arguments: [self.pathInstalled]), event: .warn)
         }
         return self.isInstalled
-    }
-
-    func installMiner() {
-        Logger.log(message: "Installing Miner", event: .info)
-        let installOutput = swiftBash.bash(command: "sh", arguments: [self.pathInstaller])
-        if installOutput.last == "1" {
-            Logger.log(message: "Miner Installed Successfully", event: .info)
-        } else {
-            Logger.log(message: "Error installing Miner: " + installOutput, event: .error)
-        }
     }
 
     func configureMiner(config: MinerRequest) {
@@ -59,7 +49,7 @@ class MinerHelper {
                 jsonObj["mining"]["urls"]["submission"].stringValue = config.submission
                 jsonObj["mining"]["plots"] = JSON(config.plotFiles)
                 jsonObj["mining"]["targetDeadline"].stringValue = config.targetDeadline
-                Logger.log(message: "Effective mining config: " + String(describing: jsonObj), event: .info)
+                Logger.log(message: "Effective mining config: " + String(describing: jsonObj), event: .debug)
                 let jsonRawData = try jsonObj.rawData()
                 let fileUrl = URL(fileURLWithPath: path)
                 try jsonRawData.write(to: fileUrl, options: .atomic)
@@ -89,9 +79,16 @@ class MinerHelper {
     static func urlArrayToString(urls: [URL]) -> String {
         var returnString = ""
         for url in urls {
-            returnString += "\"" + url.absoluteString + "\","
+            returnString += url.path + ","
         }
         return returnString
+    }
+
+    static func stringToPlotArray(plots: String) -> [String] {
+        let stringArray = plots.components(separatedBy: ",").flatMap { plot in
+            return NSURL(fileURLWithPath: plot).path
+        }
+        return stringArray
     }
 
 }

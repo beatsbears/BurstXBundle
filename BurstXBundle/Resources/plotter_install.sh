@@ -4,6 +4,7 @@
 # Created by Andrew Scott on 2/10/18.
 
 #https://github.com/k06a/mjminer.git
+cd ~/Library/Application\ Support/BurstXBundle
 curl -o ./mjminer.zip -k -L https://github.com/k06a/mjminer/archive/master.zip
 mkdir mjminer
 unzip mjminer.zip -d mjminer >/dev/null

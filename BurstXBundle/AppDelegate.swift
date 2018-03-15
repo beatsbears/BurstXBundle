@@ -18,9 +18,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Init logger Singleton
         _ = Logger()
         Logger.log(message: "Burst XBundle launched successfully", event: .info)
-        Logger.log(message: "Work directory: " + swiftBash.bash(command: "pwd", arguments: []), event: .info)
         if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"]  as? String {
             Logger.log(message: "Version: " + version, event: .info)
+        }
+
+        // Create Application directory in Library
+        let appBaseDir: URL = FileManager.default.urls(for: FileManager.SearchPathDirectory.applicationSupportDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).first!
+        let appPath = appBaseDir.appendingPathComponent("BurstXBundle")
+        do {
+            try FileManager.default.createDirectory(atPath: appPath.path, withIntermediateDirectories: false, attributes: nil)
+            Logger.log(message: "Work directory: " + appPath.absoluteString, event: .info)
+        } catch let err as NSError {
+            Logger.log(message: err.localizedDescription, event: .error)
         }
     }
 

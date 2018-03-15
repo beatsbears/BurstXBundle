@@ -13,7 +13,6 @@
 		FD260B9F202FBF5200CE528A /* is_plotter_installed.sh in Resources */ = {isa = PBXBuildFile; fileRef = FD260B9E202FBF5200CE528A /* is_plotter_installed.sh */; };
 		FD260BA1202FF17100CE528A /* create_plot_command.sh in Resources */ = {isa = PBXBuildFile; fileRef = FD260BA0202FF17100CE528A /* create_plot_command.sh */; };
 		FD29904E203A27CD000C3C93 /* is_miner_installed.sh in Resources */ = {isa = PBXBuildFile; fileRef = FD29904D203A27CD000C3C93 /* is_miner_installed.sh */; };
-		FD299050203A2E83000C3C93 /* install_miner.sh in Resources */ = {isa = PBXBuildFile; fileRef = FD29904F203A2E83000C3C93 /* install_miner.sh */; };
 		FD3A25C1202563B500DB3240 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3A25C0202563B500DB3240 /* AppDelegate.swift */; };
 		FD3A25C3202563B500DB3240 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3A25C2202563B500DB3240 /* ViewController.swift */; };
 		FD3A25C5202563B500DB3240 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD3A25C4202563B500DB3240 /* Assets.xcassets */; };
@@ -113,7 +112,6 @@
 		FD260B9E202FBF5200CE528A /* is_plotter_installed.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = is_plotter_installed.sh; sourceTree = "<group>"; };
 		FD260BA0202FF17100CE528A /* create_plot_command.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = create_plot_command.sh; sourceTree = "<group>"; };
 		FD29904D203A27CD000C3C93 /* is_miner_installed.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = is_miner_installed.sh; sourceTree = "<group>"; };
-		FD29904F203A2E83000C3C93 /* install_miner.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = install_miner.sh; sourceTree = "<group>"; };
 		FD3A25BD202563B500DB3240 /* BurstXBundle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BurstXBundle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD3A25C0202563B500DB3240 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD3A25C2202563B500DB3240 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -343,7 +341,6 @@
 				FD779EC72030C1E60045C7E2 /* run_plot_command.sh */,
 				FD779EC92030C9F60045C7E2 /* get_plot_status.sh */,
 				FD29904D203A27CD000C3C93 /* is_miner_installed.sh */,
-				FD29904F203A2E83000C3C93 /* install_miner.sh */,
 				FDB7EAEA2044E3AE003D6813 /* miner_start.sh */,
 				FDB7EAEC2044E41F003D6813 /* miner_stop.sh */,
 			);
@@ -512,7 +509,6 @@
 				FD47AAD420292F910092BF39 /* check_latest_wallet.sh in Resources */,
 				FDE13B452057608500389FA8 /* wrapper_install_plotter.sh in Resources */,
 				FDB7EAEB2044E3AE003D6813 /* miner_start.sh in Resources */,
-				FD299050203A2E83000C3C93 /* install_miner.sh in Resources */,
 				FDFBFB7D202F89ED00E3AE50 /* plotter_install.sh in Resources */,
 				FDAD0F712027767E0013301F /* create_database.sh in Resources */,
 				FD976D1F2038A6B5004CCB70 /* sig_JDK_8_Update_162.pkg in Resources */,

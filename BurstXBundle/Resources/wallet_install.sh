@@ -3,6 +3,7 @@
 #
 # Created by Andrew Scott on 2/5/18.
 
+cd ~/Library/Application\ Support/BurstXBundle/
 curl -o ./burstcoin.zip -k -L https://github.com/PoC-Consortium/burstcoin/releases/download/$1/burstcoin-$1.zip
 mkdir burstcoin
 unzip burstcoin.zip -d burstcoin >/dev/null

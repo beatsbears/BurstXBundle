@@ -47,10 +47,6 @@ class MinerViewController: NSViewController {
             self.minerReady()
         } else {
             Logger.log(message: "Miner is not installed.", event: .warn)
-            miner.installMiner()
-            if miner.isMinerInstalled() {
-                self.minerReady()
-            }
         }
     }
 
@@ -62,7 +58,7 @@ class MinerViewController: NSViewController {
                                                   submission: self.minerSubmissionTextField.stringValue,
                                                   wallet: self.minerWalletTextField.stringValue,
                                                   targetDeadline: self.minerTargetDeadlineTextField.stringValue,
-                                                  plotFiles: ["/Volumes/SD/plots/12953097211892854730_0_4096_4096"]))
+                                                  plotFiles: MinerHelper.stringToPlotArray(plots: self.minerPlotFilesTextView.string)))
         miner.startMining()
         self.minerRunning()
         } else {

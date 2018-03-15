@@ -12,6 +12,8 @@ THREAD_COUNT=$6
 CORE_USAGE=$7
 LOG_TIME=$8
 
+cd ~/Library/Application\ Support/BurstXBundle/
 echo "#!/bin/bash" > tmp_plot_command.sh
+echo "cd ~/Library/Application\ Support/BurstXBundle/" > tmp_plot_command.sh
 echo "./mjminer-master/mjminer-master/plot -k $WALLET_ID -d $PLOT_FILE -s $START_PLOT -n $NONCE_SPACE -m $MEM_USAGE -t $THREAD_COUNT -x $CORE_USAGE > $LOG_TIME.log" >> tmp_plot_command.sh
 chmod +x tmp_plot_command.sh
