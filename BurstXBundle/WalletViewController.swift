@@ -145,7 +145,7 @@ class WalletViewController: NSViewController {
         let alert = NSAlert()
         alert.messageText = "Install Successful"
         alert.addButton(withTitle: "OK")
-        alert.informativeText = "Dependencies Install successfully!"
+        alert.informativeText = "Dependencies Installed successfully!"
         alert.beginSheetModal(for: self.view.window!) { (_: NSApplication.ModalResponse) -> Void in
             self.walletProgressMeter.isHidden = true
             self.walletProgressMeter.stopAnimation(self)

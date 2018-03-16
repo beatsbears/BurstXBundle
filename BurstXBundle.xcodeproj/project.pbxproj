@@ -36,6 +36,16 @@
 		FD71C1B22052D68F00FCC140 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD71C1B12052D68F00FCC140 /* SettingsViewController.swift */; };
 		FD779EC82030C1E60045C7E2 /* run_plot_command.sh in Resources */ = {isa = PBXBuildFile; fileRef = FD779EC72030C1E60045C7E2 /* run_plot_command.sh */; };
 		FD779ECA2030C9F60045C7E2 /* get_plot_status.sh in Resources */ = {isa = PBXBuildFile; fileRef = FD779EC92030C9F60045C7E2 /* get_plot_status.sh */; };
+		FD7BD895205B7D11002C4501 /* plotter_auth.png in Resources */ = {isa = PBXBuildFile; fileRef = FD7BD88B205B7D10002C4501 /* plotter_auth.png */; };
+		FD7BD896205B7D11002C4501 /* plotter_initializing.png in Resources */ = {isa = PBXBuildFile; fileRef = FD7BD88C205B7D10002C4501 /* plotter_initializing.png */; };
+		FD7BD897205B7D11002C4501 /* wallet_running.png in Resources */ = {isa = PBXBuildFile; fileRef = FD7BD88D205B7D10002C4501 /* wallet_running.png */; };
+		FD7BD898205B7D11002C4501 /* wallet_uninstalled.png in Resources */ = {isa = PBXBuildFile; fileRef = FD7BD88E205B7D10002C4501 /* wallet_uninstalled.png */; };
+		FD7BD899205B7D11002C4501 /* wallet_auth.png in Resources */ = {isa = PBXBuildFile; fileRef = FD7BD88F205B7D11002C4501 /* wallet_auth.png */; };
+		FD7BD89A205B7D11002C4501 /* plotter_confirm.png in Resources */ = {isa = PBXBuildFile; fileRef = FD7BD890205B7D11002C4501 /* plotter_confirm.png */; };
+		FD7BD89B205B7D11002C4501 /* plotter_configured.png in Resources */ = {isa = PBXBuildFile; fileRef = FD7BD891205B7D11002C4501 /* plotter_configured.png */; };
+		FD7BD89C205B7D11002C4501 /* wallet_installed_offline.png in Resources */ = {isa = PBXBuildFile; fileRef = FD7BD892205B7D11002C4501 /* wallet_installed_offline.png */; };
+		FD7BD89D205B7D11002C4501 /* plotter_default.png in Resources */ = {isa = PBXBuildFile; fileRef = FD7BD893205B7D11002C4501 /* plotter_default.png */; };
+		FD7BD89E205B7D11002C4501 /* wallet_install.png in Resources */ = {isa = PBXBuildFile; fileRef = FD7BD894205B7D11002C4501 /* wallet_install.png */; };
 		FD8F3A3F2033F6A8008714F4 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = FD8F3A3E2033F6A8008714F4 /* .travis.yml */; };
 		FD8F3A412033FA2B008714F4 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8F3A402033FA2B008714F4 /* Logger.swift */; };
 		FD8F5B2920260321009F00F2 /* MariaDBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8F5B2820260321009F00F2 /* MariaDBHelper.swift */; };
@@ -142,6 +152,16 @@
 		FD71C1B12052D68F00FCC140 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		FD779EC72030C1E60045C7E2 /* run_plot_command.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = run_plot_command.sh; sourceTree = "<group>"; };
 		FD779EC92030C9F60045C7E2 /* get_plot_status.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = get_plot_status.sh; sourceTree = "<group>"; };
+		FD7BD88B205B7D10002C4501 /* plotter_auth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plotter_auth.png; sourceTree = "<group>"; };
+		FD7BD88C205B7D10002C4501 /* plotter_initializing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plotter_initializing.png; sourceTree = "<group>"; };
+		FD7BD88D205B7D10002C4501 /* wallet_running.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wallet_running.png; sourceTree = "<group>"; };
+		FD7BD88E205B7D10002C4501 /* wallet_uninstalled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wallet_uninstalled.png; sourceTree = "<group>"; };
+		FD7BD88F205B7D11002C4501 /* wallet_auth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wallet_auth.png; sourceTree = "<group>"; };
+		FD7BD890205B7D11002C4501 /* plotter_confirm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plotter_confirm.png; sourceTree = "<group>"; };
+		FD7BD891205B7D11002C4501 /* plotter_configured.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plotter_configured.png; sourceTree = "<group>"; };
+		FD7BD892205B7D11002C4501 /* wallet_installed_offline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wallet_installed_offline.png; sourceTree = "<group>"; };
+		FD7BD893205B7D11002C4501 /* plotter_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plotter_default.png; sourceTree = "<group>"; };
+		FD7BD894205B7D11002C4501 /* wallet_install.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wallet_install.png; sourceTree = "<group>"; };
 		FD8F3A3E2033F6A8008714F4 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		FD8F3A402033FA2B008714F4 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		FD8F5B2820260321009F00F2 /* MariaDBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MariaDBHelper.swift; sourceTree = "<group>"; };
@@ -215,6 +235,16 @@
 		FD0FB181204F25C5002FE738 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				FD7BD88B205B7D10002C4501 /* plotter_auth.png */,
+				FD7BD891205B7D11002C4501 /* plotter_configured.png */,
+				FD7BD890205B7D11002C4501 /* plotter_confirm.png */,
+				FD7BD893205B7D11002C4501 /* plotter_default.png */,
+				FD7BD88C205B7D10002C4501 /* plotter_initializing.png */,
+				FD7BD88F205B7D11002C4501 /* wallet_auth.png */,
+				FD7BD894205B7D11002C4501 /* wallet_install.png */,
+				FD7BD892205B7D11002C4501 /* wallet_installed_offline.png */,
+				FD7BD88D205B7D10002C4501 /* wallet_running.png */,
+				FD7BD88E205B7D10002C4501 /* wallet_uninstalled.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -490,6 +520,7 @@
 			files = (
 				FDB7EAE72043370B003D6813 /* .swiftlint.yml in Resources */,
 				FD71C1B02051F66700FCC140 /* BurstXBundle.plist in Resources */,
+				FD7BD897205B7D11002C4501 /* wallet_running.png in Resources */,
 				FD56A3A22043347500520574 /* Cartfile in Resources */,
 				FD779ECA2030C9F60045C7E2 /* get_plot_status.sh in Resources */,
 				FD976D1D2038A439004CCB70 /* .gitignore in Resources */,
@@ -499,30 +530,39 @@
 				FD4710092027A28400F991D4 /* db_burst_ready.sh in Resources */,
 				FD260BA1202FF17100CE528A /* create_plot_command.sh in Resources */,
 				FDFBFB81202F8B8800E3AE50 /* cpu_threads.sh in Resources */,
+				FD7BD89E205B7D11002C4501 /* wallet_install.png in Resources */,
 				FD47100B2027A2B200F991D4 /* is_maria_db_burst_ready.sh in Resources */,
 				FDAD0F702027767E0013301F /* is_maria_db_password_default.sh in Resources */,
+				FD7BD89C205B7D11002C4501 /* wallet_installed_offline.png in Resources */,
+				FD7BD89A205B7D11002C4501 /* plotter_confirm.png in Resources */,
 				FD1A1093202820C000E7AABA /* sig_JDK_8_Update_162.pkg in Resources */,
 				FDFBFB7F202F8AAB00E3AE50 /* system_memory.sh in Resources */,
+				FD7BD896205B7D11002C4501 /* plotter_initializing.png in Resources */,
 				FDAA23582038A85F004E1877 /* sig_JDK_8_Update_162.pkg in Resources */,
+				FD7BD89D205B7D11002C4501 /* plotter_default.png in Resources */,
 				FD976D1B20389D92004CCB70 /* LICENSE in Resources */,
 				FD47AAD6202941BF0092BF39 /* is_wallet_installed.sh in Resources */,
 				FD47AAD420292F910092BF39 /* check_latest_wallet.sh in Resources */,
 				FDE13B452057608500389FA8 /* wrapper_install_plotter.sh in Resources */,
 				FDB7EAEB2044E3AE003D6813 /* miner_start.sh in Resources */,
 				FDFBFB7D202F89ED00E3AE50 /* plotter_install.sh in Resources */,
+				FD7BD895205B7D11002C4501 /* plotter_auth.png in Resources */,
 				FDAD0F712027767E0013301F /* create_database.sh in Resources */,
 				FD976D1F2038A6B5004CCB70 /* sig_JDK_8_Update_162.pkg in Resources */,
 				FD47AAD220292F060092BF39 /* wallet_install.sh in Resources */,
+				FD7BD899205B7D11002C4501 /* wallet_auth.png in Resources */,
 				FD29904E203A27CD000C3C93 /* is_miner_installed.sh in Resources */,
 				FDAD0F732027767E0013301F /* db_setup.sh in Resources */,
 				FD47100D2027A67500F991D4 /* is_java8_installed.sh in Resources */,
 				FD260B9F202FBF5200CE528A /* is_plotter_installed.sh in Resources */,
 				FDAD0F742027767E0013301F /* sig_mariadb-10.2.12-osx10.13-x86_64.pkg in Resources */,
 				FD47AADB202964690092BF39 /* wallet_stop.sh in Resources */,
+				FD7BD89B205B7D11002C4501 /* plotter_configured.png in Resources */,
 				FD779EC82030C1E60045C7E2 /* run_plot_command.sh in Resources */,
 				FD260B9D202F9C7C00CE528A /* directory_open_space.sh in Resources */,
 				FD3A25C5202563B500DB3240 /* Assets.xcassets in Resources */,
 				FD3A25C8202563B500DB3240 /* Main.storyboard in Resources */,
+				FD7BD898205B7D11002C4501 /* wallet_uninstalled.png in Resources */,
 				FD47AAD8202945190092BF39 /* wallet_start.sh in Resources */,
 				FD8F3A3F2033F6A8008714F4 /* .travis.yml in Resources */,
 				FDB7EAED2044E41F003D6813 /* miner_stop.sh in Resources */,
