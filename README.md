@@ -15,7 +15,11 @@ The Burst XBundle is a macOS Wrapper/Installer/Launcher for the BRS Wallet and o
 1. Download the zip file for the latest [release](https://github.com/beatsbears/BurstXBundle/releases).
 2. Unzip and open XBundle.
 3. In the Wallet tab click the `Install` button and enter your password when prompted to install wallet dependencies.
-4. Click `start`.
+4. Click `Start`.
+5. Click `Go To Wallet` and the wallet should open in your default browser.
+
+![Wallet Running](https://raw.githubusercontent.com/beatsbears/BurstXBundle/master/Documentation/Images/wallet_running.png)
+
 
 ## Development
 Want to contribute?
