@@ -20,13 +20,15 @@ The Burst XBundle is a macOS Wrapper/Installer/Launcher for the BRS Wallet and o
 
 ![Wallet Running](https://raw.githubusercontent.com/beatsbears/BurstXBundle/master/Documentation/Images/wallet_running.png)
 
+## Wiki
+For more information please check the [wiki](https://github.com/beatsbears/BurstXBundle/wiki)
 
 ## Development
 Want to contribute?
 
 1. Check the open issues to see what tasks need help.
-2. Install [swiftlint](https://github.com/realm/SwiftLint)
-3. Open a PR
+2. Install [swiftlint](https://github.com/realm/SwiftLint) to keep styling consistent.
+3. Open a PR.
 
 ## Credits
 - @beatsbears (aka drownedcoast) - Andrew Scott
